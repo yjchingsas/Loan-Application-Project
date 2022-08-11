@@ -1,0 +1,16 @@
+{
+    "creationTimeStamp" : "2021-11-24T00:56:15.811Z",
+    "modifiedTimeStamp" : "2022-08-10T01:11:31.213Z",
+    "createdBy" : "YiJian.Ching@sas.com",
+    "modifiedBy" : "YiJian.Ching@sas.com",
+    "id" : "05257f25-9d71-4428-8973-44cc61ee4277",
+    "majorRevision" : 1,
+    "minorRevision" : 0,
+    "signature" : [ ],
+    "decisionId" : "ae9973b5-8343-4288-8254-ce87981829a4",
+    "nodeCount" : 7,
+    "sourceRevisionUri" : "/decisions/flows/ec44455e-751a-47f3-8dbd-db89b5478ae4/revisions/47609dbb-5535-4c5b-8fc5-30f32310e0ea",
+    "copyTimeStamp" : "2021-11-24T00:56:15.811Z",
+    "checkout" : false,
+    "version" : 16
+}

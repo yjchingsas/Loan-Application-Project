@@ -1,0 +1,477 @@
+
+
+/* Custom Object ExternalCreditCheckAPI retrieved on Thu Aug 11 12:30:56 UTC 2022 */ 
+ds2_options sas;
+/* PACKAGE_START: packageName="Loanu32Applicationu32Project_ExternalCreditCheckAPI", referencedBy=Loan Application Project, name=ExternalCreditCheckAPI, nodeId=593672bc-f17b-42e0-a0cf-698bff92f7d4, objectUri=/decisions/codeFiles/11eacb61-edb2-431e-b56e-07c8d4445817/revisions/5453add1-16d5-42c5-aab0-0c78bfa5ac25 */
+package "Loanu32Applicationu32Project_ExternalCreditCheckAPI" / inline;
+    dcl package pymas py;
+    dcl double pystop;
+    dcl package logger logr('App.tk.MAS');
+
+    method execute(
+         varchar(10) CustomerID
+        , in_out double CredLineAge
+        , in_out double CredLines
+        , in_out double DebtIncRatio
+        , in_out double Delinquencies
+        , in_out double DerogatoryMarks
+        , in_out double Inquiries
+    );
+
+      dcl nvarchar(10485760) pypgm;
+      dcl double rc;
+      dcl double revision;
+      if null(py) and pystop ^= 1 then do;
+        py = _new_ pymas();
+        if inmas() then do;
+            rc = py.useModule('"Loanu32Applicationu32Project_ExternalCreditCheckAPI_1083276629"', 1);
+        end;
+        else do;
+            rc = 1;
+        end;
+        if rc then do;
+          rc = py.appendSrcLine('');
+          rc = py.appendSrcLine(''''''' List all output parameters as comma-separated values in the "Output:" docString. Do not specify "None" if there is no output parameter.'''''' ');
+          rc = py.appendSrcLine('import os ');
+          rc = py.appendSrcLine('import sys ');
+          rc = py.appendSrcLine('import json ');
+          rc = py.appendSrcLine('import requests ');
+          rc = py.appendSrcLine(' ');
+          rc = py.appendSrcLine('def execute (CustomerID):');
+          rc = py.appendSrcLine('    ''Output:CredLineAge,CredLines,DebtIncRatio,Delinquencies,DerogatoryMarks,Inquiries'' ');
+          rc = py.appendSrcLine('    payload = { ');
+          rc = py.appendSrcLine('        "CustomerID": CustomerID ');
+          rc = py.appendSrcLine('    } ');
+          rc = py.appendSrcLine('    cred_check = requests.post( ');
+          rc = py.appendSrcLine('        url=''http://api.app.svc.cluster.local:5005/check'', ');
+          rc = py.appendSrcLine('        headers={''Content-Type'': ''application/json''}, ');
+          rc = py.appendSrcLine('        data = json.dumps(payload) ');
+          rc = py.appendSrcLine('    ) ');
+          rc = py.appendSrcLine('    CredLines = cred_check.json()[''CredLines''] ');
+          rc = py.appendSrcLine('    CredLineAge = cred_check.json()[''CredLineAge'']');
+          rc = py.appendSrcLine('    DebtIncRatio = cred_check.json()[''DebtIncRatio'']');
+          rc = py.appendSrcLine('    Delinquencies = cred_check.json()[''Delinquencies'']');
+          rc = py.appendSrcLine('    DerogatoryMarks = cred_check.json()[''DerogatoryMarks'']');
+          rc = py.appendSrcLine('    Inquiries = cred_check.json()[''Inquiries'']');
+          rc = py.appendSrcLine('    return CredLineAge,CredLines,DebtIncRatio,Delinquencies,DerogatoryMarks,Inquiries');
+          pypgm = py.getSource();
+          revision = py.publish(pypgm, '"Loanu32Applicationu32Project_ExternalCreditCheckAPI_1083276629"');
+          if revision < 1 then do;
+            pystop = 1;
+            logr.log( 'e', 'publish revision=$s', revision );
+            return;
+          end;
+        end;
+        else do;
+          logr.log( 'd', 'useModule rc=$s', rc );
+        end;
+        rc = py.useMethod('execute');
+        if rc then do;
+          pystop = 1;
+          logr.log( 'e', 'useMethod rc=$s', rc );
+          return;
+        end;
+      end;
+      if pystop ^= 1 then do;
+        rc = py.setString ('CustomerID', CustomerID);
+        if rc then do;
+          logr.log( 'e', 'set CustomerID rc=$s', rc );
+          return;
+        end;
+        rc = py.execute();
+        logr.log( 'd', 'execute rc=$s', rc );
+        CredLineAge = py.getDouble('CredLineAge');
+        CredLines = py.getDouble('CredLines');
+        DebtIncRatio = py.getDouble('DebtIncRatio');
+        Delinquencies = py.getDouble('Delinquencies');
+        DerogatoryMarks = py.getDouble('DerogatoryMarks');
+        Inquiries = py.getDouble('Inquiries');
+      end;
+    end;
+/* PACKAGE_END: "Loanu32Applicationu32Project_ExternalCreditCheckAPI" */
+endpackage;
+/* Model Python LogisticRegression (Python & SAS Model Pipeline) retrieved on Thu Aug 11 12:30:56 UTC 2022 */ 
+/* PACKAGE_START: packageName="Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41", referencedBy=Loan Application Project, name=Python LogisticRegression (Python & SAS Model Pipeline), nodeId=30fdb8a8-ca24-456d-98c4-4d3c9c0dd611, objectUri=/modelRepository/models/bf7a16ee-4216-4462-aed7-d3777de3f527 */
+package "Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41" / overwrite=yes;
+dcl package pymas pm;
+dcl package logger logr('App.tk.MAS');
+dcl varchar(32767) character set utf8 pypgm;
+dcl int resultCode revision;
+
+method score(double "CredLineAge",
+double "CredLines",
+double "DebtIncRatio",
+double "Delinquencies",
+double "DerogatoryMarks",
+double "HomeValue",
+double "Income",
+double "Inquiries",
+varchar(100) "JobType",
+double "LoanRequest",
+double "LoanToValue",
+double "YearsOnJob",
+in_out double resultCode,
+in_out varchar(100) "I_Default",
+in_out double "P_Default0",
+in_out double "P_Default1");
+
+   resultCode = revision = 0;
+   if null(pm) then do;
+      pm = _new_ pymas();
+      resultCode = pm.useModule('model_exec_493fe8ff-bff3-4b30-a59b-5d3901b089b7', 1);
+      if resultCode then do;
+         resultCode = pm.appendSrcLine('import sys');
+         resultCode = pm.appendSrcLine('sys.path.append("/models/resources/viya/bf7a16ee-4216-4462-aed7-d3777de3f527/")');
+         resultCode = pm.appendSrcLine('import settings_bf7a16ee_4216_4462_aed7_d3777de3f527');
+         resultCode = pm.appendSrcLine('settings_bf7a16ee_4216_4462_aed7_d3777de3f527.pickle_path = "/models/resources/viya/bf7a16ee-4216-4462-aed7-d3777de3f527/"');
+         resultCode = pm.appendSrcLine('import _76u6jw02jch4jg514dn8owbue_8e96c768_e26f_4fea_9b11_77102fbbf4a0');
+         resultCode = pm.appendSrcLine('def score_method(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob):');
+         resultCode = pm.appendSrcLine('    "Output: P_Default0, P_Default1, I_Default"');
+         resultCode = pm.appendSrcLine('    return _76u6jw02jch4jg514dn8owbue_8e96c768_e26f_4fea_9b11_77102fbbf4a0.score_method(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob)');
+
+         revision = pm.publish(pm.getSource(), 'model_exec_493fe8ff-bff3-4b30-a59b-5d3901b089b7');
+         if ( revision < 1 ) then do;
+            logr.log( 'e', 'py.publish() failed.');
+            resultCode = -1;
+            return;
+         end;
+      end;
+   end;
+
+   resultCode = pm.useMethod('score_method');
+   if resultCode then do;
+      logr.log('E', 'useMethod() failed. resultCode=$s', resultCode);
+      return;
+   end;
+   resultCode = pm.setDouble('Delinquencies', "Delinquencies");
+   if resultCode then
+      logr.log('E', 'setDouble for Delinquencies failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('DerogatoryMarks', "DerogatoryMarks");
+   if resultCode then
+      logr.log('E', 'setDouble for DerogatoryMarks failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('Inquiries', "Inquiries");
+   if resultCode then
+      logr.log('E', 'setDouble for Inquiries failed.  resultCode=$s', resultCode);
+   resultCode = pm.setString('JobType', "JobType");
+   if resultCode then
+      logr.log('E', 'setString for JobType failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('CredLineAge', "CredLineAge");
+   if resultCode then
+      logr.log('E', 'setDouble for CredLineAge failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('CredLines', "CredLines");
+   if resultCode then
+      logr.log('E', 'setDouble for CredLines failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('DebtIncRatio', "DebtIncRatio");
+   if resultCode then
+      logr.log('E', 'setDouble for DebtIncRatio failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('LoanRequest', "LoanRequest");
+   if resultCode then
+      logr.log('E', 'setDouble for LoanRequest failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('HomeValue', "HomeValue");
+   if resultCode then
+      logr.log('E', 'setDouble for HomeValue failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('Income', "Income");
+   if resultCode then
+      logr.log('E', 'setDouble for Income failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('LoanToValue', "LoanToValue");
+   if resultCode then
+      logr.log('E', 'setDouble for LoanToValue failed.  resultCode=$s', resultCode);
+   resultCode = pm.setDouble('YearsOnJob', "YearsOnJob");
+   if resultCode then
+      logr.log('E', 'setDouble for YearsOnJob failed.  resultCode=$s', resultCode);
+   resultCode = pm.execute();
+   if (resultCode) then
+      logr.log('E', 'Error: pm.execute failed.  resultCode=$s', resultCode);
+   else do;
+      "P_Default0" = pm.getDouble('P_Default0');
+      "P_Default1" = pm.getDouble('P_Default1');
+      "I_Default" = pm.getString('I_Default');
+   end;
+end;
+
+/* PACKAGE_END: "Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41" */
+endpackage;
+
+/* Rule Set highRiskModelScoreRule version 1.0 generated on Thu Aug 11 12:30:56 UTC 2022 */
+/* PACKAGE_START: packageName="Loanu32Applicationu32Project_highRiskModelScoreRule", referencedBy=Loan Application Project, name=highRiskModelScoreRule, nodeId=4bacb2ca-8143-4163-9e98-2ce9fbcdcc3f, objectUri=/businessRules/ruleSets/db98e5e7-00b9-4317-afd7-110fee87a41d/revisions/a01efdb9-eb22-4d80-a4b1-b663da98f380 */
+  package "Loanu32Applicationu32Project_highRiskModelScoreRule"  / inline;
+
+      dcl package logger _logger('App.SASDCM');
+      dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+        /* ---- RULE FIRED FLAG COUNT = 0 ---- */
+            method setruleFiredBasePosition(integer newBasePosition); end;
+            method setDecisionNodeID(varchar newDecisonNodeID); end;
+            method enableRuleFiredRecording(); end;
+            method disableRuleFiredRecording(); end;
+            method initRuleFireHashes(); end;
+            method getRuleFiredFlagCount() returns integer;  return 0; end;
+            method recordRuleFired(
+              in_out char    ruleFiredFlags,
+              in_out integer rulesFiredForRecordCount,
+              char(36)       this_rule_id);
+            end;
+
+    method execute( in_out double "P_Default1",in_out varchar "Status");
+
+;
+         if ("P_Default1" < .10) then do;
+         "Status" = 'Approved';
+
+goto "end_151630d5-be73-494c-8463-96f4edc5172c";end;
+         else do;
+         "Status" = 'Declined';
+
+         end;
+
+         "end_151630d5-be73-494c-8463-96f4edc5172c":
+
+      rule_end:  /* label for rule RETURN action */
+    end;
+
+/* PACKAGE_END: "Loanu32Applicationu32Project_highRiskModelScoreRule" */
+  endpackage;
+/* Rule Set loanToValueRule version 1.0 generated on Thu Aug 11 12:30:56 UTC 2022 */
+/* PACKAGE_START: packageName="Loanu32Applicationu32Project_loanToValueRule", referencedBy=Loan Application Project, name=loanToValueRule, nodeId=4e5bee83-cc00-408d-a8c6-908779025d31, objectUri=/businessRules/ruleSets/11df70a9-722f-4727-84de-39835a8778b9/revisions/2aceab2f-0af6-4012-af2c-e89d588d2c77 */
+  package "Loanu32Applicationu32Project_loanToValueRule"  / inline;
+
+      dcl package logger _logger('App.SASDCM');
+      dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+        /* ---- RULE FIRED FLAG COUNT = 0 ---- */
+            method setruleFiredBasePosition(integer newBasePosition); end;
+            method setDecisionNodeID(varchar newDecisonNodeID); end;
+            method enableRuleFiredRecording(); end;
+            method disableRuleFiredRecording(); end;
+            method initRuleFireHashes(); end;
+            method getRuleFiredFlagCount() returns integer;  return 0; end;
+            method recordRuleFired(
+              in_out char    ruleFiredFlags,
+              in_out integer rulesFiredForRecordCount,
+              char(36)       this_rule_id);
+            end;
+
+    method execute( in_out double "CredLineAge",in_out double "CredLines",in_out varchar "CustomerID",in_out double "DebtIncRatio",in_out double "Default",in_out double "Delinquencies",in_out double "DerogatoryMarks",in_out double "HomeValue",in_out double "Income",in_out double "Inquiries",in_out varchar "JobType",in_out double "LoanRequest",in_out double "LoanToValue",in_out varchar "Status",in_out double "YearsOnJob");
+
+;
+         if ("LoanToValue" >= .80) then do;
+         "Status" = 'Declined';
+
+         end;
+
+         "end_648c4f1c-a387-45cf-8ca8-1daa55043917":
+
+      rule_end:  /* label for rule RETURN action */
+    end;
+
+/* PACKAGE_END: "Loanu32Applicationu32Project_loanToValueRule" */
+  endpackage;
+/* Rule Set lowRiskModelScoreRule version 1.0 generated on Thu Aug 11 12:30:56 UTC 2022 */
+/* PACKAGE_START: packageName="Loanu32Applicationu32Project_lowRiskModelScoreRule", referencedBy=Loan Application Project, name=lowRiskModelScoreRule, nodeId=95688ec1-9eb5-49f6-9057-2ad3edb0553c, objectUri=/businessRules/ruleSets/c5038f90-ffea-47d4-9e21-4a4353ad3a52/revisions/cf1cca4a-e513-463b-8989-2792fe4d3ad1 */
+  package "Loanu32Applicationu32Project_lowRiskModelScoreRule"  / inline;
+
+      dcl package logger _logger('App.SASDCM');
+      dcl package logger logr_variableTrace('App.TableServices.DS2.Runtime.TraceVariables');
+
+        /* ---- RULE FIRED FLAG COUNT = 0 ---- */
+            method setruleFiredBasePosition(integer newBasePosition); end;
+            method setDecisionNodeID(varchar newDecisonNodeID); end;
+            method enableRuleFiredRecording(); end;
+            method disableRuleFiredRecording(); end;
+            method initRuleFireHashes(); end;
+            method getRuleFiredFlagCount() returns integer;  return 0; end;
+            method recordRuleFired(
+              in_out char    ruleFiredFlags,
+              in_out integer rulesFiredForRecordCount,
+              char(36)       this_rule_id);
+            end;
+
+    method execute( in_out double "P_Default1",in_out varchar "Status");
+
+;
+         if ("P_Default1" < .3) then do;
+         "Status" = 'Approved';
+
+goto "end_32723d1e-71ec-438b-98bd-50253032e7c2";end;
+         else do;
+         "Status" = 'Declined';
+
+         end;
+
+         "end_32723d1e-71ec-438b-98bd-50253032e7c2":
+
+      rule_end:  /* label for rule RETURN action */
+    end;
+
+/* PACKAGE_END: "Loanu32Applicationu32Project_lowRiskModelScoreRule" */
+  endpackage;
+
+/* Decision Loan Application Project version 1.0 generated on Thu Aug 11 12:30:56 UTC 2022 */
+/* {PACKAGE_START} */
+  package "Loan Application Project1_0"  / inline;
+    dcl package logger logr_perf('App.tk.SID.Perf');
+    dcl double timer_start;
+    dcl double elapsed_time;
+    dcl double total_timer_start;
+    dcl double total_elapsed_time;
+
+    dcl package "Loanu32Applicationu32Project_ExternalCreditCheckAPI" "Loanu32Applicationu32Project_ExternalCreditCheckAPI_hdl"();
+    dcl package "Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41" "Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41_hdl"();
+    dcl package "Loanu32Applicationu32Project_highRiskModelScoreRule" "Loanu32Applicationu32Project_highRiskModelScoreRule_hdl"();
+    dcl package "Loanu32Applicationu32Project_loanToValueRule" "Loanu32Applicationu32Project_loanToValueRule_hdl"();
+    dcl package "Loanu32Applicationu32Project_lowRiskModelScoreRule" "Loanu32Applicationu32Project_lowRiskModelScoreRule_hdl"();
+
+      method init();
+     end;
+
+    method execute_internal(
+       in_out double "CredLineAge"
+      ,in_out double "CredLines"
+      ,in_out varchar "CustomerID"
+      ,in_out double "DebtIncRatio"
+      ,in_out double "Delinquencies"
+      ,in_out double "DerogatoryMarks"
+      ,in_out double "HomeValue"
+      ,in_out double "Income"
+      ,in_out double "Inquiries"
+      ,in_out varchar "JobType"
+      ,in_out double "LoanRequest"
+      ,in_out double "LoanToValue"
+      ,in_out double "YearsOnJob"
+      ,in_out varchar "I_Default"
+      ,in_out double "P_Default0"
+      ,in_out double "P_Default1"
+      ,in_out varchar "Status"
+
+      ,in_out integer "_filter_"
+
+    );
+        dcl integer dg_filter_;
+
+       dcl double "Default";
+
+       dcl integer _masRC;
+
+        total_timer_start = datetime();
+
+        timer_start = datetime();
+        "Loanu32Applicationu32Project_loanToValueRule_hdl".execute("CredLineAge", "CredLines", "CustomerID", "DebtIncRatio", "Default", "Delinquencies", "DerogatoryMarks", "HomeValue", "Income", "Inquiries", "JobType", "LoanRequest", "LoanToValue", "Status", "YearsOnJob");
+        elapsed_time = datetime() - timer_start;
+        logr_perf.log( 'd', 'Package Name: "Loan Application Project1_0", Node Name: loanToValueRule, Node ID: 4e5bee83-cc00-408d-a8c6-908779025d31, NODE DURATION: ' .. elapsed_time);
+
+        if ( "Status" = 'Declined' ) then do;
+
+        end;
+        else do;
+
+             timer_start = datetime();
+             "Loanu32Applicationu32Project_ExternalCreditCheckAPI_hdl".execute("CustomerID", "CredLineAge", "CredLines", "DebtIncRatio", "Delinquencies", "DerogatoryMarks", "Inquiries");
+             elapsed_time = datetime() - timer_start;
+             logr_perf.log( 'd', 'Package Name: "Loan Application Project1_0", Node Name: ExternalCreditCheckAPI, Node ID: 593672bc-f17b-42e0-a0cf-698bff92f7d4, NODE DURATION: ' .. elapsed_time);
+
+             timer_start = datetime();
+             "Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41_hdl".score("CredLineAge", "CredLines", "DebtIncRatio", "Delinquencies", "DerogatoryMarks", "HomeValue", "Income", "Inquiries", "JobType", "LoanRequest", "LoanToValue", "YearsOnJob", "resultCode", "I_Default", "P_Default0", "P_Default1");
+             elapsed_time = datetime() - timer_start;
+             logr_perf.log( 'd', 'Package Name: "Loan Application Project1_0", Node Name: Python LogisticRegression (Python & SAS Model Pipeline), Node ID: 30fdb8a8-ca24-456d-98c4-4d3c9c0dd611, NODE DURATION: ' .. elapsed_time);
+
+/*model code*/;
+
+             if ( "YearsOnJob" < 1 ) then do;
+
+                  timer_start = datetime();
+                  "Loanu32Applicationu32Project_highRiskModelScoreRule_hdl".execute("P_Default1", "Status");
+                  elapsed_time = datetime() - timer_start;
+                  logr_perf.log( 'd', 'Package Name: "Loan Application Project1_0", Node Name: highRiskModelScoreRule, Node ID: 4bacb2ca-8143-4163-9e98-2ce9fbcdcc3f, NODE DURATION: ' .. elapsed_time);
+
+             end;
+             else do;
+
+                  timer_start = datetime();
+                  "Loanu32Applicationu32Project_lowRiskModelScoreRule_hdl".execute("P_Default1", "Status");
+                  elapsed_time = datetime() - timer_start;
+                  logr_perf.log( 'd', 'Package Name: "Loan Application Project1_0", Node Name: lowRiskModelScoreRule, Node ID: 95688ec1-9eb5-49f6-9057-2ad3edb0553c, NODE DURATION: ' .. elapsed_time);
+
+             end;
+
+        end;
+
+        "end":/*label for decision node link to flow end*/
+
+        total_elapsed_time = datetime() - total_timer_start;
+        logr_perf.log( 'd', 'Package Name: "Loan Application Project1_0", TOTAL DURATION: ' .. total_elapsed_time);
+
+     end;
+
+    method execute(
+       double "CredLineAge_"
+      ,double "CredLines_"
+      ,varchar(10) "CustomerID_"
+      ,double "DebtIncRatio_"
+      ,double "Delinquencies_"
+      ,double "DerogatoryMarks_"
+      ,double "HomeValue_"
+      ,double "Income_"
+      ,double "Inquiries_"
+      ,varchar(7) "JobType_"
+      ,double "LoanRequest_"
+      ,double "LoanToValue_"
+      ,double "YearsOnJob_"
+      ,in_out double "CredLineAge"
+      ,in_out double "CredLines"
+      ,in_out varchar "CustomerID"
+      ,in_out double "DebtIncRatio"
+      ,in_out double "Delinquencies"
+      ,in_out double "DerogatoryMarks"
+      ,in_out double "HomeValue"
+      ,in_out varchar "I_Default"
+      ,in_out double "Income"
+      ,in_out double "Inquiries"
+      ,in_out varchar "JobType"
+      ,in_out double "LoanRequest"
+      ,in_out double "LoanToValue"
+      ,in_out double "P_Default0"
+      ,in_out double "P_Default1"
+      ,in_out varchar "Status"
+      ,in_out double "YearsOnJob"
+);
+
+      dcl integer _filter_;
+          "CredLineAge" = "CredLineAge_";
+      "CredLines" = "CredLines_";
+      "CustomerID" = "CustomerID_";
+      "DebtIncRatio" = "DebtIncRatio_";
+      "Delinquencies" = "Delinquencies_";
+      "DerogatoryMarks" = "DerogatoryMarks_";
+      "HomeValue" = "HomeValue_";
+      "Income" = "Income_";
+      "Inquiries" = "Inquiries_";
+      "JobType" = "JobType_";
+      "LoanRequest" = "LoanRequest_";
+      "LoanToValue" = "LoanToValue_";
+      "YearsOnJob" = "YearsOnJob_";
+
+          execute_internal(
+          "CredLineAge"
+         ,"CredLines"
+         ,"CustomerID"
+         ,"DebtIncRatio"
+         ,"Delinquencies"
+         ,"DerogatoryMarks"
+         ,"HomeValue"
+         ,"Income"
+         ,"Inquiries"
+         ,"JobType"
+         ,"LoanRequest"
+         ,"LoanToValue"
+         ,"YearsOnJob"
+         ,"I_Default"
+         ,"P_Default0"
+         ,"P_Default1"
+         ,"Status"
+      ,"_filter_"
+      );
+
+    end;
+
+    /* {PACKAGE_END} */
+      endpackage;
