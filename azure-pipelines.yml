@@ -33,7 +33,8 @@ steps:
     azureResourceGroup: $(azureResourceGroup)
     kubernetesCluster: $(kubernetesCluster)
     useClusterAdmin: $(useClusterAdmin)
-    command: describe pods
+    command: get
+    arguments: "pods -n apteam"
 
 # - script: echo Hello, world!
 #   displayName: 'Run a one-line script'
