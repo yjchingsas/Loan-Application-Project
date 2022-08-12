@@ -7,4 +7,3 @@
 
 '''
 
-print("Hello, world!")

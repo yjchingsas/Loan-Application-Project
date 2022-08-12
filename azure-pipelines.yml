@@ -1,7 +1,17 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
+# TODO: fill in parameters and match with what is in AzureDevOps parameters
+
+# parameters:
+#   - name: 
+#     displayName:
+#     type:
+#     default:
+
+variables:
+  azureSubscriptionEndpoint: apteam-viya4-aks-default
+  azureContainerRegistry: ssayjc.azurecr.io
+  azureResourceGroup: ssayjc
+  kubernetesCluster: apteam-viya4-aks
+  useClusterAdmin: true
 
 trigger:
 - main
@@ -15,10 +25,20 @@ steps:
     scriptSource: 'filepath'
     scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
 
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: Kubernetes@1
+  displayName: kubectl test
+  inputs:
+    connectionType: Azure Resource Manager
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+    azureResourceGroup: $(azureResourceGroup)
+    kubernetesCluster: $(kubernetesCluster)
+    useClusterAdmin: $(useClusterAdmin)
+    command: describe pods
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+# - script: echo Hello, world!
+#   displayName: 'Run a one-line script'
+
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+#   displayName: 'Run a multi-line script'
