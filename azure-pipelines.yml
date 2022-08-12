@@ -8,7 +8,7 @@
 
 variables:
   server: viya4.apdemo.sas.com
-  protoco: https
+  protocol: https
   azureSubscriptionEndpoint: apteam-viya4-aks-connection
   azureContainerRegistry: ssayjc.azurecr.io
   azureResourceGroup: ssayjc
@@ -22,16 +22,15 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: Test Python Model
+- task: TestPythonModel@1
   inputs:
     scriptSource: 'filepath'
     scriptPath: $(System.DefaultWorkingDirectory)/test_python_model.py
 
-- task: Deploy Decision Flow as SCR
+- task: DeployDecisionSCR@1
   inputs:
     scriptSource: 'filepath'
     scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
-
 
 - task: Kubernetes@1
   displayName: kubectl re-deploy SCR decision container
