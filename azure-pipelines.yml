@@ -7,7 +7,7 @@
 #     default:
 
 variables:
-  azureSubscriptionEndpoint: apteam-viya4-aks-default
+  azureSubscriptionEndpoint: apteam-viya4-aks-connection
   azureContainerRegistry: ssayjc.azurecr.io
   azureResourceGroup: ssayjc
   kubernetesCluster: apteam-viya4-aks
@@ -28,7 +28,7 @@ steps:
 - task: Kubernetes@1
   displayName: kubectl test
   inputs:
-    connectionType: Kubernetes Service Connection
+    connectionType: Azure Resource Manager
     azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureResourceGroup: $(azureResourceGroup)
     kubernetesCluster: $(kubernetesCluster)
