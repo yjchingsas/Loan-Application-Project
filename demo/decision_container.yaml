@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scr-decision-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scr-decision-container
+  template:
+    metadata:
+      labels:
+        app: scr-decision-container
+    spec:
+      hostname: scrdecisionapp
+      containers:
+      - name: scr-decision-container
+        image: ssayjcrepo.azurecr.io/loanapp_project:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 1000m
+            memory: 4Gi
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scr-decision-container
+spec:
+  type: LoadBalancer
+  selector:
+    app: scr-decision-container
+  ports:
+  - port: 8080
+    targetPort: 8080
+  loadBalancerSourceRanges:
+  - 192.31.37.0/24
+  - 203.125.221.0/24
+  - 1.156.0.0/16
+
+#TODO: fix the cluster ip to run this
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: scr-decision-container
+#   namespace: scr-decision-container
+# spec:
+#   type: LoadBalancer
+#   ports:
+#   - port: 80
+#     targetPort: 8001
+#     protocol: TCP
+#   selector:
+#     app: scr-decision-container
+#   loadBalancerSourceRanges:
+#   - 192.31.37.0/24
+#   - 203.125.221.0/24

@@ -7,6 +7,8 @@
 #     default:
 
 variables:
+  server: viya4.apdemo.sas.com
+  protoco: https
   azureSubscriptionEndpoint: apteam-viya4-aks-connection
   azureContainerRegistry: ssayjc.azurecr.io
   azureResourceGroup: ssayjc
@@ -20,21 +22,27 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: PythonScript@0
+- task: Test Python Model
+  inputs:
+    scriptSource: 'filepath'
+    scriptPath: $(System.DefaultWorkingDirectory)/test_python_model.py
+
+- task: Deploy Decision Flow as SCR
   inputs:
     scriptSource: 'filepath'
     scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
 
+
 - task: Kubernetes@1
-  displayName: kubectl test
+  displayName: kubectl re-deploy SCR decision container
   inputs:
     connectionType: Azure Resource Manager
     azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureResourceGroup: $(azureResourceGroup)
     kubernetesCluster: $(kubernetesCluster)
     useClusterAdmin: $(useClusterAdmin)
-    command: get
-    arguments: "pods -n apteam"
+    command: rollout
+    arguments: "restart deployment scr-decision-container"
 
 # - script: echo Hello, world!
 #   displayName: 'Run a one-line script'
