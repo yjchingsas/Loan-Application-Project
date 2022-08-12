@@ -28,7 +28,7 @@ stages:
   - job: testPythonModel
     displayName: Test Python Model Code
     steps:
-    - task: PythonScript@1
+    - task: PythonScript@0
       inputs:
         scriptSource: 'filepath'
         scriptPath: $(System.DefaultWorkingDirectory)/test_python_model.py
@@ -40,7 +40,7 @@ stages:
   - job: testPythonModel
     displayName: Test Python Model Code
     steps:
-    - task: PythonScript@2
+    - task: PythonScript@0
       inputs:
         scriptSource: 'filepath'
         scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
