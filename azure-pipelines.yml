@@ -34,10 +34,10 @@ stages:
         scriptPath: $(System.DefaultWorkingDirectory)/test_python_model.py
 
 - stage: publishing
-  displayName: Test Python Model
+  displayName: Create Decision SCR
   condition: succeeded('testing')
   jobs:
-  - job: testPythonModel
+  - job: publishDecisionSCR
     displayName: Test Python Model Code
     steps:
     - task: PythonScript@0
@@ -46,10 +46,10 @@ stages:
         scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
 
 - stage: deployment
-  displayName: Test Python Model
+  displayName: Deploy Decision SCR as Pod
   condition: succeeded('publishing')
   jobs:
-  - job: testPythonModel
+  - job: deployDecisionSCR
     displayName: Test Python Model Code
     steps:
     - task: Kubernetes@1
@@ -62,11 +62,3 @@ stages:
         useClusterAdmin: $(useClusterAdmin)
         command: rollout
         arguments: "restart deployment scr-decision-container"
-
-# - script: echo Hello, world!
-#   displayName: 'Run a one-line script'
-
-# - script: |
-#     echo Add other tasks to build, test, and deploy your project.
-#     echo See https://aka.ms/yaml
-#   displayName: 'Run a multi-line script'
