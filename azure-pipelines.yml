@@ -12,8 +12,8 @@ pool:
 steps:
 - task: PythonScript@0
   inputs:
-    scriptSource: 'inline'
-    script: python deploy_decision_container.py
+    scriptSource: 'filepath'
+    script: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
 
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
