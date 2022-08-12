@@ -6,3 +6,5 @@
 * Score using app
 
 '''
+
+print("Hello, world!")

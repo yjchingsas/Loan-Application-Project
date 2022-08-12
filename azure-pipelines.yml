@@ -10,6 +10,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
+- task: PythonScript@0
+  inputs:
+    scriptSource: 'inline'
+    script: python deploy_decision_container.py
+
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
 
