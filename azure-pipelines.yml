@@ -21,27 +21,47 @@ trigger:
 pool:
   vmImage: ubuntu-latest
 
-steps:
-- task: TestPythonModel@1
-  inputs:
-    scriptSource: 'filepath'
-    scriptPath: $(System.DefaultWorkingDirectory)/test_python_model.py
+stages:
+- stage: testing
+  displayName: Test Python Model
+  jobs:
+  - job: testPythonModel
+    displayName: Test Python Model Code
+    steps:
+    - task: PythonScript@1
+      inputs:
+        scriptSource: 'filepath'
+        scriptPath: $(System.DefaultWorkingDirectory)/test_python_model.py
 
-- task: DeployDecisionSCR@1
-  inputs:
-    scriptSource: 'filepath'
-    scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
+- stage: publishing
+  displayName: Test Python Model
+  condition: succeeded('testing')
+  jobs:
+  - job: testPythonModel
+    displayName: Test Python Model Code
+    steps:
+    - task: PythonScript@2
+      inputs:
+        scriptSource: 'filepath'
+        scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
 
-- task: Kubernetes@1
-  displayName: kubectl re-deploy SCR decision container
-  inputs:
-    connectionType: Azure Resource Manager
-    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
-    azureResourceGroup: $(azureResourceGroup)
-    kubernetesCluster: $(kubernetesCluster)
-    useClusterAdmin: $(useClusterAdmin)
-    command: rollout
-    arguments: "restart deployment scr-decision-container"
+- stage: deployment
+  displayName: Test Python Model
+  condition: succeeded('publishing')
+  jobs:
+  - job: testPythonModel
+    displayName: Test Python Model Code
+    steps:
+    - task: Kubernetes@1
+      displayName: kubectl re-deploy SCR decision container
+      inputs:
+        connectionType: Azure Resource Manager
+        azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+        azureResourceGroup: $(azureResourceGroup)
+        kubernetesCluster: $(kubernetesCluster)
+        useClusterAdmin: $(useClusterAdmin)
+        command: rollout
+        arguments: "restart deployment scr-decision-container"
 
 # - script: echo Hello, world!
 #   displayName: 'Run a one-line script'
