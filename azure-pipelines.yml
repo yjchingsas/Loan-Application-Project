@@ -28,7 +28,7 @@ steps:
 - task: Kubernetes@1
   displayName: kubectl test
   inputs:
-    connectionType: Azure Resource Manager
+    connectionType: Kubernetes Service Connection
     azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureResourceGroup: $(azureResourceGroup)
     kubernetesCluster: $(kubernetesCluster)
