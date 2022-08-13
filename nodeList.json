@@ -68,8 +68,8 @@
         "customContextMicroAnalytics" : false
     },
     {
-        "id" : "bf7a16ee-4216-4462-aed7-d3777de3f527",
-        "name" : "Python LogisticRegression (Python & SAS Model Pipeline)",
+        "id" : "18a81ad7-db11-4470-8a0b-fc3d807efce2",
+        "name" : "Python GradientBoosting (Python & SAS Model Pipeline)",
         "type" : "application/vnd.sas.models.model",
         "versionName" : "",
         "activeVersionReference" : false,

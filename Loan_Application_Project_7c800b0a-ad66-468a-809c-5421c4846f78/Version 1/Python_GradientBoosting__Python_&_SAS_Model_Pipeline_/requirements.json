@@ -1,6 +1,0 @@
-[
-    {
-        "step":"install packages ",
-        "command":"pip3 install -r /modules/18a81ad7-db11-4470-8a0b-fc3d807efce2/requirements.txt"
-     }
-]
