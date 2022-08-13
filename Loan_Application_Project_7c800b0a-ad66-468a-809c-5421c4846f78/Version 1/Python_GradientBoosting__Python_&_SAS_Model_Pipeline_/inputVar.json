@@ -1,0 +1,74 @@
+[
+  {
+    "level": "interval",
+    "name": "CredLineAge",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "interval",
+    "name": "CredLines",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "interval",
+    "name": "DebtIncRatio",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "nominal",
+    "name": "Delinquencies",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "nominal",
+    "name": "DerogatoryMarks",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "interval",
+    "name": "HomeValue",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "interval",
+    "name": "Income",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "nominal",
+    "name": "Inquiries",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "nominal",
+    "name": "JobType",
+    "length": 7,
+    "type": "string"
+  },
+  {
+    "level": "interval",
+    "name": "LoanRequest",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "interval",
+    "name": "LoanToValue",
+    "length": 8,
+    "type": "decimal"
+  },
+  {
+    "level": "interval",
+    "name": "YearsOnJob",
+    "length": 8,
+    "type": "decimal"
+  }
+]
