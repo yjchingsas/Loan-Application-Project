@@ -29,7 +29,7 @@ stages:
     displayName: Test Python Model Code
     steps:
     - task: PythonScript@0
-      condition: not(contains(variables['Build.SourceVersionMessage'], '[loanapp_project]'))
+      condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
       inputs:
         scriptSource: 'filepath'
         scriptPath: $(System.DefaultWorkingDirectory)/test_python_model.py
@@ -42,7 +42,7 @@ stages:
     displayName: Create Decision Flow SCR
     steps:
     - task: PythonScript@0
-      condition: not(contains(variables['Build.SourceVersionMessage'], '[loanapp_project]'))
+      condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
       inputs:
         scriptSource: 'filepath'
         scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
@@ -55,7 +55,7 @@ stages:
     displayName: Test Python Model Code
     steps:
     - task: Kubernetes@1
-      condition: not(contains(variables['Build.SourceVersionMessage'], '[loanapp_project]'))
+      condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
       displayName: kubectl re-deploy SCR decision container
       inputs:
         connectionType: Azure Resource Manager
