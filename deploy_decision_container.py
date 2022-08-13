@@ -33,6 +33,7 @@ response = requests.post(
 access_token = response.json()['access_token']
 
 ## publishing time
+print("Now publishing decision SCR with following details:")
 payload = {
     "notes":"Published by SAS Intelligent Decisioning",
     "destinationName":"Azure",
@@ -48,6 +49,8 @@ payload = {
      }]
 }
 
+print(payload)
+
 ##publish module 
 post_module_publish = requests.post(
     url=f'{protocol}://{server}/modelPublish/models',
@@ -56,4 +59,4 @@ post_module_publish = requests.post(
     params=dict(force='True'),
     data=json.dumps(payload)
     )
-post_module_publish.json()
+print(post_module_publish.json())

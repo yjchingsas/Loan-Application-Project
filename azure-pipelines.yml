@@ -52,11 +52,11 @@ stages:
   condition: succeeded('publishing')
   jobs:
   - job: deployDecisionSCR
-    displayName: Test Python Model Code
+    displayName: Deploy Decision SCR as Pod
     steps:
     - task: Kubernetes@1
       condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
-      displayName: kubectl re-deploy SCR decision container
+      displayName: kubectl re-deploy decision SCR deployment
       inputs:
         connectionType: Azure Resource Manager
         azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
