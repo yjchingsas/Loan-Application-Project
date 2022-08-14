@@ -29,12 +29,11 @@ stages:
     steps:
     - task: PythonScript@0
       condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
-
-    - script: python -m pip install -r $(System.DefaultWorkingDirectory)/Loan-Application-Project/Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version 1/Python_GradientBoosting__Python_&_SAS_Model_Pipeline_/requirements.txt
-      displayName: Install requirements
-
-    - script: python $(System.DefaultWorkingDirectory)/test_python_model.py
-      displayName: Test Python Model with pytest
+      inputs:
+        scriptSource: 'inline'
+        script: |
+          python -m pip install -r $(System.DefaultWorkingDirectory)/Loan-Application-Project/Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version 1/Python_GradientBoosting__Python_&_SAS_Model_Pipeline_/requirements.txt
+          python $(System.DefaultWorkingDirectory)/test_python_model.py
 
 - stage: publishing
   displayName: Create Decision SCR
