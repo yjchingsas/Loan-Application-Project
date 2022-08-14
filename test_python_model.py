@@ -1,15 +1,14 @@
-import sys
-sys.path.append('Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version\ 1/Python_GradientBoosting__Python_\&_SAS_Model_Pipeline_')
 
 import pickle
 import numpy as np
 import pandas as pd
 
+picklepath = "Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version\ 1/Python_GradientBoosting__Python_\&_SAS_Model_Pipeline_"
 dm_pklname = '_DJ5N7WG1NE74BJO4LN9LUR5FZ_PKL.pickle'
 dm_class_input = ["Delinquencies","DerogatoryMarks","Inquiries","JobType"]
 dm_interval_input = ["CredLineAge","CredLines","DebtIncRatio","HomeValue","Income","LoanRequest" ,"LoanToValue","YearsOnJob"]
 
-with open(dm_pklname, 'rb') as f:
+with open(picklepath+ '/'+ dm_pklname, 'rb') as f:
     ohe = pickle.load(f)
     model = pickle.load(f)
 
