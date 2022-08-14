@@ -28,7 +28,6 @@ stages:
   - job: testPythonModel
     steps:
     - task: PythonScript@0
-      condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project')
 
     - script: pip install -r $(System.DefaultWorkingDirectory)/Loan-Application-Project/Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version 1/Python_GradientBoosting__Python_&_SAS_Model_Pipeline_/requirements.txt
       displayName: 'Install dependencies'
@@ -42,7 +41,7 @@ stages:
     displayName: Create Decision Flow SCR
     steps:
     - task: PythonScript@0
-      condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
+      #condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
       inputs:
         scriptSource: 'filepath'
         scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
@@ -55,7 +54,7 @@ stages:
     displayName: Deploy Decision SCR as Pod
     steps:
     - task: Kubernetes@1
-      condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
+      #condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
       displayName: kubectl re-deploy decision SCR deployment
       inputs:
         connectionType: Azure Resource Manager
