@@ -34,8 +34,11 @@ stages:
 
     - script: pip install -r $(System.DefaultWorkingDirectory)/Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version\ 1/Python_GradientBoosting__Python_\&_SAS_Model_Pipeline_/requirements.txt
       displayName: 'Install dependencies'
+    
+    - script: pip install pytest
+      displayName: 'Install pytest'
 
-    - script: python $(System.DefaultWorkingDirectory)/test_python_model.py
+    - script: pytest $(System.DefaultWorkingDirectory)/test_python_model.py
       displayName: 'Test Python model with pytest'
 
 
