@@ -27,9 +27,11 @@ stages:
   jobs:
   - job: testPythonModel
     steps:
-    - task: PythonScript@0
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.8'
 
-    - script: pip install -r $(System.DefaultWorkingDirectory)/Loan-Application-Project/Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version 1/Python_GradientBoosting__Python_&_SAS_Model_Pipeline_/requirements.txt
+    - script: pip install -r $(System.DefaultWorkingDirectory)/Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version 1/Python_GradientBoosting__Python_&_SAS_Model_Pipeline_/requirements.txt
       displayName: 'Install dependencies'
 
 
