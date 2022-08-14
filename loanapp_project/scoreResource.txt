@@ -1,6 +1,6 @@
 
 
-/* Custom Object CreditCheckAPI retrieved on Sun Aug 14 02:37:09 UTC 2022 */ 
+/* Custom Object CreditCheckAPI retrieved on Sun Aug 14 02:47:52 UTC 2022 */ 
 ds2_options sas;
 /* PACKAGE_START: packageName="Loanu32Applicationu32Project_CreditCheckAPI", referencedBy=Loan Application Project, name=CreditCheckAPI, nodeId=57412ddb-8ed3-41a2-8070-ab023f83b1fe, objectUri=/decisions/codeFiles/80532eaa-a46c-4569-8982-c45b1732fcf4/revisions/18732958-11a4-4edf-a366-8c686ccddbd3 */
 package "Loanu32Applicationu32Project_CreditCheckAPI" / inline;
@@ -90,7 +90,7 @@ package "Loanu32Applicationu32Project_CreditCheckAPI" / inline;
     end;
 /* PACKAGE_END: "Loanu32Applicationu32Project_CreditCheckAPI" */
 endpackage;
-/* Model Python LogisticRegression (Python & SAS Model Pipeline) retrieved on Sun Aug 14 02:37:09 UTC 2022 */ 
+/* Model Python LogisticRegression (Python & SAS Model Pipeline) retrieved on Sun Aug 14 02:47:52 UTC 2022 */ 
 /* PACKAGE_START: packageName="Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41", referencedBy=Loan Application Project, name=Python LogisticRegression (Python & SAS Model Pipeline), nodeId=24d5f2fa-5675-4847-9279-a6b6e39aa5e9, objectUri=/modelRepository/models/bf7a16ee-4216-4462-aed7-d3777de3f527 */
 package "Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41" / overwrite=yes;
 dcl package pymas pm;
@@ -118,18 +118,18 @@ in_out double "P_Default1");
    resultCode = revision = 0;
    if null(pm) then do;
       pm = _new_ pymas();
-      resultCode = pm.useModule('model_exec_a120d3e6-20d0-4ae4-8627-c8ca3d09a076', 1);
+      resultCode = pm.useModule('model_exec_f7b22bb7-b8c5-4789-b351-af21298d55ea', 1);
       if resultCode then do;
          resultCode = pm.appendSrcLine('import sys');
          resultCode = pm.appendSrcLine('sys.path.append("/models/resources/viya/bf7a16ee-4216-4462-aed7-d3777de3f527/")');
          resultCode = pm.appendSrcLine('import settings_bf7a16ee_4216_4462_aed7_d3777de3f527');
          resultCode = pm.appendSrcLine('settings_bf7a16ee_4216_4462_aed7_d3777de3f527.pickle_path = "/models/resources/viya/bf7a16ee-4216-4462-aed7-d3777de3f527/"');
-         resultCode = pm.appendSrcLine('import _76u6jw02jch4jg514dn8owbue_c9663e70_a71e_4a79_952e_ad114f06c7ca');
+         resultCode = pm.appendSrcLine('import _76u6jw02jch4jg514dn8owbue_73436721_acb9_4ce4_9163_a7be52b27004');
          resultCode = pm.appendSrcLine('def score_method(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob):');
          resultCode = pm.appendSrcLine('    "Output: P_Default0, P_Default1, I_Default"');
-         resultCode = pm.appendSrcLine('    return _76u6jw02jch4jg514dn8owbue_c9663e70_a71e_4a79_952e_ad114f06c7ca.score_method(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob)');
+         resultCode = pm.appendSrcLine('    return _76u6jw02jch4jg514dn8owbue_73436721_acb9_4ce4_9163_a7be52b27004.score_method(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob)');
 
-         revision = pm.publish(pm.getSource(), 'model_exec_a120d3e6-20d0-4ae4-8627-c8ca3d09a076');
+         revision = pm.publish(pm.getSource(), 'model_exec_f7b22bb7-b8c5-4789-b351-af21298d55ea');
          if ( revision < 1 ) then do;
             logr.log( 'e', 'py.publish() failed.');
             resultCode = -1;
@@ -192,7 +192,7 @@ end;
 /* PACKAGE_END: "Loanu32Applicationu32Project_Pythonu32LogisticRegressionu32u40Pythonu32u38u32SASu32Modelu32Pipelineu41" */
 endpackage;
 
-/* Rule Set highRiskModelScoreRule version 1.0 generated on Sun Aug 14 02:37:09 UTC 2022 */
+/* Rule Set highRiskModelScoreRule version 1.0 generated on Sun Aug 14 02:47:52 UTC 2022 */
 /* PACKAGE_START: packageName="Loanu32Applicationu32Project_highRiskModelScoreRule", referencedBy=Loan Application Project, name=highRiskModelScoreRule, nodeId=4bacb2ca-8143-4163-9e98-2ce9fbcdcc3f, objectUri=/businessRules/ruleSets/db98e5e7-00b9-4317-afd7-110fee87a41d/revisions/a01efdb9-eb22-4d80-a4b1-b663da98f380 */
   package "Loanu32Applicationu32Project_highRiskModelScoreRule"  / inline;
 
@@ -231,7 +231,7 @@ goto "end_151630d5-be73-494c-8463-96f4edc5172c";end;
 
 /* PACKAGE_END: "Loanu32Applicationu32Project_highRiskModelScoreRule" */
   endpackage;
-/* Rule Set loanToValueRule version 1.0 generated on Sun Aug 14 02:37:09 UTC 2022 */
+/* Rule Set loanToValueRule version 1.0 generated on Sun Aug 14 02:47:52 UTC 2022 */
 /* PACKAGE_START: packageName="Loanu32Applicationu32Project_loanToValueRule", referencedBy=Loan Application Project, name=loanToValueRule, nodeId=4e5bee83-cc00-408d-a8c6-908779025d31, objectUri=/businessRules/ruleSets/11df70a9-722f-4727-84de-39835a8778b9/revisions/2aceab2f-0af6-4012-af2c-e89d588d2c77 */
   package "Loanu32Applicationu32Project_loanToValueRule"  / inline;
 
@@ -266,7 +266,7 @@ goto "end_151630d5-be73-494c-8463-96f4edc5172c";end;
 
 /* PACKAGE_END: "Loanu32Applicationu32Project_loanToValueRule" */
   endpackage;
-/* Rule Set lowRiskModelScoreRule version 1.0 generated on Sun Aug 14 02:37:09 UTC 2022 */
+/* Rule Set lowRiskModelScoreRule version 1.0 generated on Sun Aug 14 02:47:52 UTC 2022 */
 /* PACKAGE_START: packageName="Loanu32Applicationu32Project_lowRiskModelScoreRule", referencedBy=Loan Application Project, name=lowRiskModelScoreRule, nodeId=99a30dfc-a5bf-4e39-91fd-165c06eb3248, objectUri=/businessRules/ruleSets/c5038f90-ffea-47d4-9e21-4a4353ad3a52/revisions/cf1cca4a-e513-463b-8989-2792fe4d3ad1 */
   package "Loanu32Applicationu32Project_lowRiskModelScoreRule"  / inline;
 
@@ -306,7 +306,7 @@ goto "end_32723d1e-71ec-438b-98bd-50253032e7c2";end;
 /* PACKAGE_END: "Loanu32Applicationu32Project_lowRiskModelScoreRule" */
   endpackage;
 
-/* Decision Loan Application Project version 1.0 generated on Sun Aug 14 02:37:09 UTC 2022 */
+/* Decision Loan Application Project version 1.0 generated on Sun Aug 14 02:47:52 UTC 2022 */
 /* {PACKAGE_START} */
   package loanapp_project  / inline;
     dcl package logger logr_perf('App.tk.SID.Perf');
