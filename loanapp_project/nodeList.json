@@ -17,23 +17,6 @@
         "customContextMicroAnalytics" : false
     },
     {
-        "id" : "11eacb61-edb2-431e-b56e-07c8d4445817",
-        "name" : "ExternalCreditCheckAPI",
-        "type" : "application/vnd.sas.decision.code.file",
-        "versionId" : "5453add1-16d5-42c5-aab0-0c78bfa5ac25",
-        "versionName" : "1.0",
-        "activeVersionReference" : false,
-        "referencingDecisions" : [
-            {
-                "id" : "ae9973b5-8343-4288-8254-ce87981829a4",
-                "name" : "Loan Application Project",
-                "versionId" : "05257f25-9d71-4428-8973-44cc61ee4277"
-            }
-        ],
-        "customContext" : false,
-        "customContextMicroAnalytics" : false
-    },
-    {
         "id" : "11df70a9-722f-4727-84de-39835a8778b9",
         "name" : "loanToValueRule",
         "type" : "application/vnd.sas.business.rule.set",
@@ -68,8 +51,25 @@
         "customContextMicroAnalytics" : false
     },
     {
-        "id" : "18a81ad7-db11-4470-8a0b-fc3d807efce2",
-        "name" : "Python GradientBoosting (Python & SAS Model Pipeline)",
+        "id" : "80532eaa-a46c-4569-8982-c45b1732fcf4",
+        "name" : "CreditCheckAPI",
+        "type" : "application/vnd.sas.decision.code.file",
+        "versionId" : "18732958-11a4-4edf-a366-8c686ccddbd3",
+        "versionName" : "1.0",
+        "activeVersionReference" : false,
+        "referencingDecisions" : [
+            {
+                "id" : "ae9973b5-8343-4288-8254-ce87981829a4",
+                "name" : "Loan Application Project",
+                "versionId" : "05257f25-9d71-4428-8973-44cc61ee4277"
+            }
+        ],
+        "customContext" : false,
+        "customContextMicroAnalytics" : false
+    },
+    {
+        "id" : "bf7a16ee-4216-4462-aed7-d3777de3f527",
+        "name" : "Python LogisticRegression (Python & SAS Model Pipeline)",
         "type" : "application/vnd.sas.models.model",
         "versionName" : "",
         "activeVersionReference" : false,
