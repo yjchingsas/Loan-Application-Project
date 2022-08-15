@@ -5,11 +5,11 @@
   },
   {
     "role": "scoreResource",
-    "name": "DS2Pkg_PythonWrapper.sas"
+    "name": "requirements.txt"
   },
   {
     "role": "scoreResource",
-    "name": "requirements.txt"
+    "name": "DS2Pkg_PythonWrapper.sas"
   },
   {
     "role": "python pickle",
