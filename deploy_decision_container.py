@@ -28,7 +28,8 @@ headers = {
 response = requests.post(
     url = f"{protocol}://{server}/SASLogon/oauth/token", 
     headers=headers, 
-    data=payload
+    data=payload,
+    verify=False
 )
 access_token = response.json()['access_token']
 
@@ -57,6 +58,7 @@ post_module_publish = requests.post(
     headers={'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/vnd.sas.models.publishing.request+json'},
     params=dict(force='True'),
-    data=json.dumps(payload)
+    data=json.dumps(payload),
+    verify=False
     )
 print(post_module_publish.json())
