@@ -14,4 +14,4 @@ def score_record(Delinquencies,DerogatoryMarks,Inquiries,JobType,CredLineAge,Cre
     "Output: P_Default0,P_Default1,I_Default"
     return _56liklgygp1yokc3m2xxt7y6h.score_method(Delinquencies,DerogatoryMarks,Inquiries,JobType,CredLineAge,CredLines,DebtIncRatio,LoanRequest,HomeValue,Income,LoanToValue,YearsOnJob)
 
-print(score_record(189.79,130.50,93.47,"",21.82,84.07,74.69,36.11,87.69,111.52,104.45,61.72))
+print(score_record(160.36,192.27,1.35,"",90.80,149.81,7.60,22.57,173.32,171.71,114.05,95.06))
