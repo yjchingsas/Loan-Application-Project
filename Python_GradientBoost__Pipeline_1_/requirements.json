@@ -1,0 +1,16 @@
+[
+    {
+        "step":"install numpy",
+        "command":"pip3 install numpy"
+    },
+    {   "step":"install pandas",
+        "command":"pip3 install pandas" 
+    },
+    {   "step":"install requests",
+        "command":"pip3 install requests" 
+    },
+    {   "step":"install scikit-learn",
+        "command":"pip3 install scikit-learn" 
+    }
+    
+]
