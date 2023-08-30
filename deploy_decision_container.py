@@ -16,7 +16,7 @@ server = os.environ['SERVER']
 # model_name = os.environ['MODEL_NAME']
 
 ## Refresh token
-refresh_token = Path('demo/sas_cli_refresh_token.txt').read_text().replace('\n', '')
+refresh_token = Path('demo/apgtps2demo_refresh_token.txt').read_text().replace('\n', '')
 
 payload=f'grant_type=refresh_token&refresh_token={refresh_token}'
 headers = {
@@ -36,19 +36,23 @@ access_token = response.json()['access_token']
 ## publishing time
 print("Now publishing decision SCR with following details:")
 payload = {
-    "notes":"Published by SAS Intelligent Decisioning",
-    "destinationName":"Azure",
-    "modelContents":[
-     {"overwrite":True,
-      "modelName":"loanapp_project",
-      "codeMediaType":"text/vnd.sas.source.ds2.async",
-      "codeType":"ds2",
-      "codeUri":"/decisions/flows/ae9973b5-8343-4288-8254-ce87981829a4/revisions/05257f25-9d71-4428-8973-44cc61ee4277/code?rootPackageName=loanapp_project_test&traversedPathFlag=false&isGeneratingRuleFiredColumn=false&codeTarget=docker",
-      "publishLevel":"decision",
-      "sourceUri":"/decisions/flows/ae9973b5-8343-4288-8254-ce87981829a4/revisions/05257f25-9d71-4428-8973-44cc61ee4277",
-      "principalID":"ae9973b5-8343-4288-8254-ce87981829a4",
-     }]
+    "notes": "Published by SAS Intelligent Decisioning",
+    "destinationName": "AzureCR",
+    "modelContents": [
+        {
+            "overwrite": True,
+            "modelName": "loanapp_project",
+            "codeMediaType": "text/vnd.sas.source.ds2.async",
+            "codeType": "ds2",
+            "codeUri": "/decisions/flows/69825e91-8b52-4f7e-9bff-b46f1a89e0ba/revisions/3de0a4dc-80ea-4e16-9114-3bf8a5adae13/code?rootPackageName=loanapp_project&traversedPathFlag=false&isGeneratingRuleFiredColumn=false&codeTarget=docker",
+            "publishLevel": "decision",
+            "sourceUri": "/decisions/flows/69825e91-8b52-4f7e-9bff-b46f1a89e0ba/revisions/3de0a4dc-80ea-4e16-9114-3bf8a5adae13",
+            "principalID": "69825e91-8b52-4f7e-9bff-b46f1a89e0ba",
+            "analyticStoreUri": []
+        }]
 }
+
+
 
 print(payload)
 

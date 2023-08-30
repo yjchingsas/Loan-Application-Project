@@ -3,8 +3,8 @@ import pickle
 import numpy as np
 import pandas as pd
 
-picklepath = "Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version 1/Python_GradientBoosting__Python_&_SAS_Model_Pipeline_"
-dm_pklname = '_DJ5N7WG1NE74BJO4LN9LUR5FZ_PKL.pickle'
+picklepath = "Loan Application Project/unzipped/b1317393-c264-41eb-9e5c-986d501f5582"
+dm_pklname = '_1H3TZJO257GBCD9E09DRHLI76_PKL.pickle'
 dm_class_input = ["Delinquencies","DerogatoryMarks","Inquiries","JobType"]
 dm_interval_input = ["CredLineAge","CredLines","DebtIncRatio","HomeValue","Income","LoanRequest" ,"LoanToValue","YearsOnJob"]
 

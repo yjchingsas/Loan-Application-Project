@@ -7,12 +7,12 @@
 #     default:
 
 variables:
-  server: viya4.apdemo.sas.com
+  server: apgtps2demo.gtp.unx.sas.com
   protocol: https
   azureSubscriptionEndpoint: apteam-viya4-aks-connection
   azureContainerRegistry: ssayjc.azurecr.io
-  azureResourceGroup: ssayjc
-  kubernetesCluster: apteam-viya4-aks
+  azureResourceGroup: abpzza
+  kubernetesCluster: abpzza-s2demo
   useClusterAdmin: true
 
 trigger:
@@ -32,7 +32,7 @@ stages:
       inputs:
         versionSpec: '3.8'
 
-    - script: pip install -r $(System.DefaultWorkingDirectory)/Loan_Application_Project_7c800b0a-ad66-468a-809c-5421c4846f78/Version\ 1/Python_GradientBoosting__Python_\&_SAS_Model_Pipeline_/requirements.txt
+    - script: pip install numpy pandas scikit-learn
       displayName: 'Install dependencies'
     
     - script: pip install pytest
