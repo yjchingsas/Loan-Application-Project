@@ -1,0 +1,137 @@
+{
+  "creationTimeStamp" : "0001-01-01T00:00:00Z",
+  "modifiedTimeStamp" : "0001-01-01T00:00:00Z",
+  "revision" : 0,
+  "name" : "dmcas_properties",
+  "version" : 0,
+  "order" : 0,
+  "parameterMap" : {
+    "propertyName" : {
+      "label" : "Property Name",
+      "length" : 256,
+      "parameter" : "propertyName",
+      "preformatted" : false,
+      "type" : "undefined",
+      "values" : [ "propertyName" ]
+    },
+    "propertyValue" : {
+      "label" : "Property Value",
+      "length" : 256,
+      "parameter" : "propertyValue",
+      "preformatted" : false,
+      "type" : "undefined",
+      "values" : [ "propertyValue" ]
+    }
+  },
+  "data" : [ {
+    "dataMap" : {
+      "propertyName" : "codeLocation",
+      "propertyValue" : "mlearning"
+    },
+    "rowNumber" : 1
+  }, {
+    "dataMap" : {
+      "propertyName" : "dataMiningVersion",
+      "propertyValue" : "V2023.05"
+    },
+    "rowNumber" : 2
+  }, {
+    "dataMap" : {
+      "propertyName" : "dframe",
+      "propertyValue" : "true"
+    },
+    "rowNumber" : 3
+  }, {
+    "dataMap" : {
+      "propertyName" : "envVar",
+      "propertyValue" : "DM_PYPATH"
+    },
+    "rowNumber" : 4
+  }, {
+    "dataMap" : {
+      "propertyName" : "exactPctlLift",
+      "propertyValue" : "true"
+    },
+    "rowNumber" : 5
+  }, {
+    "dataMap" : {
+      "propertyName" : "exportWithFormat",
+      "propertyValue" : "true"
+    },
+    "rowNumber" : 6
+  }, {
+    "dataMap" : {
+      "propertyName" : "fullDatasetReconstitution",
+      "propertyValue" : "false"
+    },
+    "rowNumber" : 7
+  }, {
+    "dataMap" : {
+      "propertyName" : "osCode_Language",
+      "propertyValue" : "py"
+    },
+    "rowNumber" : 8
+  }, {
+    "dataMap" : {
+      "propertyName" : "osCode_file_uri",
+      "propertyValue" : "/files/files/2130408a-4f9c-4926-8038-c94184b573e5"
+    },
+    "rowNumber" : 9
+  }, {
+    "dataMap" : {
+      "propertyName" : "osScoreCode_Language",
+      "propertyValue" : "py"
+    },
+    "rowNumber" : 10
+  }, {
+    "dataMap" : {
+      "propertyName" : "osScoreCode_file_uri",
+      "propertyValue" : "/files/files/3a555dbe-ad56-478b-8fe2-beb5517627a7"
+    },
+    "rowNumber" : 11
+  }, {
+    "dataMap" : {
+      "propertyName" : "reportingOnly",
+      "propertyValue" : "false"
+    },
+    "rowNumber" : 12
+  }, {
+    "dataMap" : {
+      "propertyName" : "sampMethod",
+      "propertyValue" : "STRATIFY"
+    },
+    "rowNumber" : 13
+  }, {
+    "dataMap" : {
+      "propertyName" : "sampObs",
+      "propertyValue" : "10000"
+    },
+    "rowNumber" : 14
+  }, {
+    "dataMap" : {
+      "propertyName" : "sampPercent",
+      "propertyValue" : "10"
+    },
+    "rowNumber" : 15
+  }, {
+    "dataMap" : {
+      "propertyName" : "sampType",
+      "propertyValue" : "NUM"
+    },
+    "rowNumber" : 16
+  }, {
+    "dataMap" : {
+      "propertyName" : "saveOutputData",
+      "propertyValue" : "false"
+    },
+    "rowNumber" : 17
+  }, {
+    "dataMap" : {
+      "propertyName" : "templateRevision",
+      "propertyValue" : "6"
+    },
+    "rowNumber" : 18
+  } ],
+  "xInteger" : false,
+  "yInteger" : false
+}

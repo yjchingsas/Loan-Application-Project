@@ -1,0 +1,122 @@
+[
+   {
+      "name": "CredLineAge",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "CredLines",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "DebtIncRatio",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "Delinquencies",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "nominal",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "DerogatoryMarks",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "nominal",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "HomeValue",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "Income",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "Inquiries",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "nominal",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "JobType",
+      "description": "",
+      "role": "input",
+      "type": "string",
+      "level": "nominal",
+      "format": "",
+      "aggregation": "",
+      "length": 7
+   },
+   {
+      "name": "LoanRequest",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "LoanToValue",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "YearsOnJob",
+      "description": "",
+      "role": "input",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   }
+]

@@ -1,0 +1,30 @@
+[
+   {
+      "name": "_56LIKLGYGP1YOKC3M2XXT7Y6H_PKL.pickle",
+      "role": "python pickle"
+   },
+   {
+      "name": "_56liklgygp1yokc3m2xxt7y6h.py",
+      "role": "score"
+   },
+   {
+      "name": "requirements.json",
+      "role": "scoreResource"
+   },
+   {
+      "name": "DS2Pkg_PythonWrapper.sas",
+      "role": "scoreResource"
+   },
+   {
+      "name": "DS2EP_PythonWrapper.sas",
+      "role": "scoreResource"
+   },
+   {
+      "name": "settings.py",
+      "role": "scoreResource"
+   },
+   {
+      "name": "example_test.py",
+      "role": "scoreResource"
+   }
+]

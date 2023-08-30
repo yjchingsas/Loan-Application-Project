@@ -1,0 +1,166 @@
+{
+  "creationTimeStamp" : "0001-01-01T00:00:00Z",
+  "modifiedTimeStamp" : "0001-01-01T00:00:00Z",
+  "revision" : 0,
+  "name" : "dmcas_relativeimportance",
+  "version" : 0,
+  "order" : 0,
+  "parameterMap" : {
+    "LABEL" : {
+      "label" : "Variable Label",
+      "length" : 256,
+      "order" : 1,
+      "parameter" : "LABEL",
+      "preformatted" : false,
+      "type" : "char",
+      "values" : [ "LABEL" ]
+    },
+    "LEVEL" : {
+      "label" : "Variable Level",
+      "length" : 10,
+      "order" : 5,
+      "parameter" : "LEVEL",
+      "preformatted" : false,
+      "type" : "char",
+      "values" : [ "LEVEL" ]
+    },
+    "ROLE" : {
+      "label" : "Role",
+      "length" : 32,
+      "order" : 4,
+      "parameter" : "ROLE",
+      "preformatted" : false,
+      "type" : "char",
+      "values" : [ "ROLE" ]
+    },
+    "RelativeImportance" : {
+      "label" : "Relative Importance",
+      "length" : 8,
+      "order" : 3,
+      "parameter" : "RelativeImportance",
+      "preformatted" : false,
+      "type" : "num",
+      "values" : [ "RelativeImportance" ]
+    },
+    "Variable" : {
+      "label" : "Variable Name",
+      "length" : 255,
+      "order" : 2,
+      "parameter" : "Variable",
+      "preformatted" : false,
+      "type" : "char",
+      "values" : [ "Variable" ]
+    }
+  },
+  "data" : [ {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "NOMINAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "1",
+      "Variable" : "DerogatoryMarks"
+    },
+    "rowNumber" : 1
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "NOMINAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.945452039425",
+      "Variable" : "Delinquencies"
+    },
+    "rowNumber" : 2
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.452984463659",
+      "Variable" : "Income"
+    },
+    "rowNumber" : 3
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "NOMINAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.422032303072",
+      "Variable" : "Inquiries"
+    },
+    "rowNumber" : 4
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.369768351778",
+      "Variable" : "HomeValue"
+    },
+    "rowNumber" : 5
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.361908185652",
+      "Variable" : "DebtIncRatio"
+    },
+    "rowNumber" : 6
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.190648264956",
+      "Variable" : "LoanRequest"
+    },
+    "rowNumber" : 7
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.186691882689",
+      "Variable" : "LoanToValue"
+    },
+    "rowNumber" : 8
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.174271744202",
+      "Variable" : "CredLines"
+    },
+    "rowNumber" : 9
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.0886176277694",
+      "Variable" : "CredLineAge"
+    },
+    "rowNumber" : 10
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "INTERVAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.0855192893542",
+      "Variable" : "YearsOnJob"
+    },
+    "rowNumber" : 11
+  }, {
+    "dataMap" : {
+      "LABEL" : "",
+      "LEVEL" : "NOMINAL",
+      "ROLE" : "INPUT",
+      "RelativeImportance" : "0.0527183963354",
+      "Variable" : "JobType"
+    },
+    "rowNumber" : 12
+  } ],
+  "xInteger" : false,
+  "yInteger" : false
+}
