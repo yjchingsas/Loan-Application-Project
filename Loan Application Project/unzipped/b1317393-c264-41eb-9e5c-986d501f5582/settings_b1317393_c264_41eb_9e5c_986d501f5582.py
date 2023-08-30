@@ -1,1 +1,0 @@
-global pickle_path
