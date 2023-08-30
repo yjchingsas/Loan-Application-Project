@@ -12,7 +12,7 @@ with open(picklepath+ '/'+ dm_pklname, 'rb') as f:
     ohe = pickle.load(f)
     model = pickle.load(f)
 
-def score_method(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob):
+def score_record(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob):
     "Output: P_Default0, P_Default1, I_Default"
 
     record = pd.DataFrame([[Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge, CredLines, DebtIncRatio, LoanRequest, HomeValue, Income, LoanToValue, YearsOnJob]],\
@@ -30,10 +30,11 @@ def score_method(Delinquencies, DerogatoryMarks, Inquiries, JobType, CredLineAge
     return float(rec_pred_prob[0][0]), float(rec_pred_prob[0][1]), str(float(rec_pred[0]))
 
 def test_function_is_tuple():
-    assert type(score_method(1,1,1,'Other',1,1,1,1,1,1,1,1)) is tuple
+    assert type(score_record(14.20,155.73,111.31,"",20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)) is tuple
 
 def test_output_scores():
-    assert score_method(1,1,1,'Other',1,1,1,1,1,1,1,1)[0] + score_method(1,1,1,'Other',1,1,1,1,1,1,1,1)[1] == 1.0
+    assert score_record(14.20,155.73,111.31,"",20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)[0] + score_record(14.20,155.73,111.31,"",20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)[1] == 1.0
 
 def test_output_result():
-    assert type(score_method(1,1,1,'Other',1,1,1,1,1,1,1,1)[2]) is str
+    assert type(score_record(14.20,155.73,111.31,"",20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)[2]) is str
+
