@@ -1,0 +1,30 @@
+{
+    "creationTimeStamp" : "2023-08-29T08:59:07.054Z",
+    "modifiedTimeStamp" : "2023-08-30T01:27:05.432Z",
+    "createdBy" : "YiJian.Ching@sas.com",
+    "modifiedBy" : "YiJian.Ching@sas.com",
+    "id" : "3de0a4dc-80ea-4e16-9114-3bf8a5adae13",
+    "majorRevision" : 2,
+    "minorRevision" : 0,
+    "signature" : [ ],
+    "links" : [
+        {
+            "method" : "GET",
+            "rel" : "workflowtasks",
+            "href" : "/workflow/processes/WFd1fd32ab-1a3a-4f96-b9d5-875c973a9f19/tasks",
+            "uri" : "/workflow/processes/WFd1fd32ab-1a3a-4f96-b9d5-875c973a9f19/tasks",
+            "type" : "application/vnd.sas.collection",
+            "itemType" : "application/vnd.sas.workflow.task"
+        }
+    ],
+    "decisionId" : "69825e91-8b52-4f7e-9bff-b46f1a89e0ba",
+    "nodeCount" : 7,
+    "properties" : {
+        "workflowModifiedBy" : "YiJian.Ching@sas.com",
+        "workflowModifiedTimeStamp" : "2023-08-29T08:59:07.391Z",
+        "workflowProcessId" : "WFd1fd32ab-1a3a-4f96-b9d5-875c973a9f19",
+        "workflowState" : "Developing"
+    },
+    "checkout" : false,
+    "version" : 17
+}
