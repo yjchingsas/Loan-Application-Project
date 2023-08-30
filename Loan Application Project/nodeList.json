@@ -34,10 +34,11 @@
         "customContextMicroAnalytics" : false
     },
     {
-        "id" : "b1317393-c264-41eb-9e5c-986d501f5582",
-        "name" : "Python LogisticRegression with SAS Transform (Pipeline 1)",
-        "type" : "application/vnd.sas.models.model",
-        "versionName" : "",
+        "id" : "eafc037b-dbbb-440a-b465-960a71c03f7c",
+        "name" : "lowRiskModelScoreRule",
+        "type" : "application/vnd.sas.business.rule.set",
+        "versionId" : "5b2c2680-c833-4e93-8675-e6dfd9db76f6",
+        "versionName" : "1.0",
         "activeVersionReference" : false,
         "referencingDecisions" : [
             {
@@ -50,11 +51,10 @@
         "customContextMicroAnalytics" : false
     },
     {
-        "id" : "eafc037b-dbbb-440a-b465-960a71c03f7c",
-        "name" : "lowRiskModelScoreRule",
-        "type" : "application/vnd.sas.business.rule.set",
-        "versionId" : "5b2c2680-c833-4e93-8675-e6dfd9db76f6",
-        "versionName" : "1.0",
+        "id" : "4136b5c6-4c03-46cd-b46c-852c63462643",
+        "name" : "Python GradientBoost (Pipeline 1)",
+        "type" : "application/vnd.sas.models.model",
+        "versionName" : "",
         "activeVersionReference" : false,
         "referencingDecisions" : [
             {
