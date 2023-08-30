@@ -10,6 +10,7 @@ variables:
   server: apgtps2demo.gtp.unx.sas.com
   protocol: https
   azureSubscriptionEndpoint: abpzza-s2demo-aks
+  kubernetesServiceEndpoint: abpzza-s2demo-aks
   azureContainerRegistry: ssayjc.azurecr.io
   azureResourceGroup: abpzza
   kubernetesCluster: abpzza-s2demo
@@ -66,8 +67,8 @@ stages:
       #condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
       displayName: kubectl re-deploy decision SCR deployment
       inputs:
-        connectionType: Azure Resource Manager
-        azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+        connectionType: 'Kubernetes Service Connection'
+        kubernetesServiceEndpoint: $(kubernetesServiceEndpoint)
         azureResourceGroup: $(azureResourceGroup)
         kubernetesCluster: $(kubernetesCluster)
         useClusterAdmin: $(useClusterAdmin)
