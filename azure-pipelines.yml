@@ -9,7 +9,7 @@
 variables:
   server: apgtps2demo.gtp.unx.sas.com
   protocol: https
-  azureSubscriptionEndpoint: apteam-viya4-aks-connection
+  azureSubscriptionEndpoint: abpzza-s2demo-aks
   azureContainerRegistry: ssayjc.azurecr.io
   azureResourceGroup: abpzza
   kubernetesCluster: abpzza-s2demo
