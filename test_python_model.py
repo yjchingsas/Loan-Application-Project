@@ -3,7 +3,7 @@ import pickle
 import numpy as np
 import pandas as pd
 
-picklepath = "Loan Application Project/unzipped/b1317393-c264-41eb-9e5c-986d501f5582"
+picklepath = "Python_GradientBoost__Pipeline_1_"
 dm_pklname = '_56LIKLGYGP1YOKC3M2XXT7Y6H_PKL.pickle'
 dm_class_input = ["Delinquencies","DerogatoryMarks","Inquiries","JobType"]
 dm_interval_input = ["CredLineAge","CredLines","DebtIncRatio","HomeValue","Income","LoanRequest" ,"LoanToValue","YearsOnJob"]
