@@ -4,6 +4,10 @@
       "role": "scoreResource"
    },
    {
+      "name": "DS2Pkg_PythonWrapper.sas",
+      "role": "scoreResource"
+   },
+   {
       "name": "settings.py",
       "role": "scoreResource"
    },
@@ -25,10 +29,6 @@
    },
    {
       "name": "requirements.txt",
-      "role": "scoreResource"
-   },
-   {
-      "name": "DS2Pkg_PythonWrapper.sas",
       "role": "scoreResource"
    }
 ]
