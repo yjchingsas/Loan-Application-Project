@@ -1,0 +1,471 @@
+{
+  "creationTimeStamp": "2023-08-30T01:42:22.246765Z",
+  "createdBy": "YiJian.Ching@sas.com",
+  "modifiedTimeStamp": "2023-08-30T01:42:22.246765Z",
+  "modifiedBy": "YiJian.Ching@sas.com",
+  "version": 1,
+  "id": "ff923b25-0be0-44fc-8860-d35cd0e77540",
+  "destinationName": "GitHub LoanApp Repo",
+  "destination": {
+    "creationTimeStamp": "2023-08-30T01:41:49.34919Z",
+    "createdBy": "YiJian.Ching@sas.com",
+    "modifiedTimeStamp": "2023-08-30T01:41:49.349191Z",
+    "modifiedBy": "YiJian.Ching@sas.com",
+    "version": 2,
+    "id": "b38e76e8-c295-44e2-a0bf-732769a93d79",
+    "name": "GitHub LoanApp Repo",
+    "description": "GitHub LoanApp publishing destination",
+    "destinationType": "git",
+    "properties": [
+      {
+        "name": "remoteRepositoryURL",
+        "value": "https://github.com/yjchingsas/Loan-Application-Project.git"
+      },
+      {
+        "name": "localRepositoryLocation",
+        "value": "/mmprojectpublic"
+      },
+      {
+        "name": "userEmail",
+        "value": "YiJian.Ching@sas.com"
+      },
+      {
+        "name": "credDomainId",
+        "value": "GitHub Domain Flow"
+      }
+    ],
+    "links": [
+      {
+        "method": "GET",
+        "rel": "up",
+        "href": "/modelPublish/destinations",
+        "uri": "/modelPublish/destinations",
+        "type": "application/vnd.sas.collection"
+      },
+      {
+        "method": "GET",
+        "rel": "self",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "type": "application/vnd.sas.models.publishing.destination"
+      },
+      {
+        "method": "DELETE",
+        "rel": "delete",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo"
+      },
+      {
+        "method": "PUT",
+        "rel": "update",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "type": "application/vnd.sas.models.publishing.destination"
+      },
+      {
+        "method": "GET",
+        "rel": "getGitFolders",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo/gitFolders",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo/gitFolders",
+        "type": "application/vnd.sas.collection"
+      }
+    ]
+  },
+  "content": {
+    "creationTimeStamp": "0001-01-01T00:00:00Z",
+    "modifiedTimeStamp": "0001-01-01T00:00:00Z",
+    "modelName": "Loan Application Project",
+    "codeType": "ds2",
+    "codeURI": "/decisions/flows/69825e91-8b52-4f7e-9bff-b46f1a89e0ba/revisions/3de0a4dc-80ea-4e16-9114-3bf8a5adae13/code?rootPackageName=%22Loan+Application+Project%22\u0026lookupMode=INLINE\u0026treatmentGroupMode=INLINE\u0026globalVariableMode=INLINE\u0026traversedPathFlag=false\u0026isGeneratingRuleFiredColumn=false\u0026codeTarget=gitMas",
+    "codeMediaType": "text/vnd.sas.source.ds2.async",
+    "sourceURI": "/decisions/flows/69825e91-8b52-4f7e-9bff-b46f1a89e0ba/revisions/3de0a4dc-80ea-4e16-9114-3bf8a5adae13",
+    "publishLevel": "decision"
+  },
+  "properties": {
+    "gitFolderPath": "Loan Application Project",
+    "gitRepositoryURL": "https://github.com/yjchingsas/Loan-Application-Project.git"
+  },
+  "sourceURI": "/decisions/flows/69825e91-8b52-4f7e-9bff-b46f1a89e0ba/revisions/3de0a4dc-80ea-4e16-9114-3bf8a5adae13",
+  "resources": [
+    {
+      "creationTimeStamp": "2023-08-28T08:59:20.152Z",
+      "createdBy": "YiJian.Ching@sas.com",
+      "modifiedTimeStamp": "2023-08-29T07:57:41.198Z",
+      "modifiedBy": "YiJian.Ching@sas.com",
+      "name": "Python LogisticRegression with SAS Transform (Pipeline 1)",
+      "uri": "/modelRepository/models/b1317393-c264-41eb-9e5c-986d501f5582",
+      "mediaType": "application/vnd.sas.models.model",
+      "contentVersion": "1.1",
+      "inline": true
+    },
+    {
+      "creationTimeStamp": "2023-08-29T05:31:00.492Z",
+      "createdBy": "YiJian.Ching@sas.com",
+      "modifiedTimeStamp": "2023-08-29T05:36:37.197Z",
+      "modifiedBy": "YiJian.Ching@sas.com",
+      "name": "CreditCheckAPI",
+      "uri": "/decisions/codeFiles/5156a734-b100-43be-aecb-fa45ce83b5a7/revisions/7c3cada7-ddac-4c7b-8da1-add0a77676d8",
+      "mediaType": "application/vnd.sas.decision.code.file",
+      "contentVersion": "2.0",
+      "inline": true
+    },
+    {
+      "creationTimeStamp": "2023-08-28T09:47:01.123Z",
+      "createdBy": "YiJian.Ching@sas.com",
+      "modifiedTimeStamp": "2023-08-28T09:48:06.552Z",
+      "modifiedBy": "YiJian.Ching@sas.com",
+      "name": "lowRiskModelScoreRule",
+      "uri": "/businessRules/ruleSets/eafc037b-dbbb-440a-b465-960a71c03f7c/revisions/5b2c2680-c833-4e93-8675-e6dfd9db76f6",
+      "mediaType": "application/vnd.sas.business.rule.set",
+      "contentVersion": "1.0",
+      "inline": true
+    },
+    {
+      "creationTimeStamp": "2023-08-28T09:33:26.041Z",
+      "createdBy": "YiJian.Ching@sas.com",
+      "modifiedTimeStamp": "2023-08-28T09:35:46.39Z",
+      "modifiedBy": "YiJian.Ching@sas.com",
+      "name": "loanToValueRule",
+      "uri": "/businessRules/ruleSets/75f8a22e-d288-4f54-aa25-260c560926e3/revisions/92145e26-d99e-4add-97c5-8c14892afb5b",
+      "mediaType": "application/vnd.sas.business.rule.set",
+      "contentVersion": "1.0",
+      "inline": true
+    },
+    {
+      "creationTimeStamp": "2023-08-28T09:44:52.129Z",
+      "createdBy": "YiJian.Ching@sas.com",
+      "modifiedTimeStamp": "2023-08-28T09:46:32.85Z",
+      "modifiedBy": "YiJian.Ching@sas.com",
+      "name": "highRiskModelScoreRule",
+      "uri": "/businessRules/ruleSets/c294cb09-b87b-4ce0-b7d8-38f038934f86/revisions/e56d05d9-f398-42c6-bfb1-4d1b3eceb1f3",
+      "mediaType": "application/vnd.sas.business.rule.set",
+      "contentVersion": "1.0",
+      "inline": true
+    }
+  ],
+  "inputVariables": [
+    {
+      "name": "CredLineAge",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "CredLines",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "CustomerID",
+      "description": "",
+      "role": "",
+      "type": "string",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": 6
+    },
+    {
+      "name": "DebtIncRatio",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "Delinquencies",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "DerogatoryMarks",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "HomeValue",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "Income",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "Inquiries",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "JobType",
+      "description": "",
+      "role": "",
+      "type": "string",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": 7
+    },
+    {
+      "name": "LoanRequest",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "LoanToValue",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "YearsOnJob",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    }
+  ],
+  "outputVariables": [
+    {
+      "name": "CredLineAge",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "CredLines",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "CustomerID",
+      "description": "",
+      "role": "",
+      "type": "string",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": 6
+    },
+    {
+      "name": "DebtIncRatio",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "Delinquencies",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "DerogatoryMarks",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "HomeValue",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "I_Default",
+      "description": "",
+      "role": "",
+      "type": "string",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": 12
+    },
+    {
+      "name": "Income",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "Inquiries",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "JobType",
+      "description": "",
+      "role": "",
+      "type": "string",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": 7
+    },
+    {
+      "name": "LoanRequest",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "LoanToValue",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "P_Default0",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+    },
+    {
+      "name": "P_Default1",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+    },
+    {
+      "name": "Status",
+      "description": "",
+      "role": "",
+      "type": "string",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    },
+    {
+      "name": "YearsOnJob",
+      "description": "",
+      "role": "",
+      "type": "decimal",
+      "level": "",
+      "format": "",
+      "aggregation": "",
+      "length": null
+    }
+  ],
+  "component": {
+    "majorVersion": 2,
+    "name": "Loan Application Project"
+  },
+  "product": {
+    "majorVersion": 3,
+    "minorVersion": 87,
+    "versionName": "3.87.7",
+    "name": "Decisions Service"
+  },
+  "service": {
+    "name": "Model Publish service"
+  },
+  "baseImage": {},
+  "requirements": [
+    {
+      "name": "requests",
+      "value": "pip3 install requests",
+      "type": "pythonInstall"
+    }
+  ]
+}
