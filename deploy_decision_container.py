@@ -44,15 +44,13 @@ payload = {
             "modelName": "loanapp_project",
             "codeMediaType": "text/vnd.sas.source.ds2.async",
             "codeType": "ds2",
-            "codeUri": "/decisions/flows/69825e91-8b52-4f7e-9bff-b46f1a89e0ba/revisions/3de0a4dc-80ea-4e16-9114-3bf8a5adae13/code?rootPackageName=loanapp_project&traversedPathFlag=false&isGeneratingRuleFiredColumn=false&codeTarget=docker",
+            "codeUri": "/decisions/flows/8b9a681f-c759-434a-a165-13355cb26440/revisions/9658cfad-cbca-4590-a869-5016ebc40cd4/code?rootPackageName=loanapp_project&traversedPathFlag=false&isGeneratingRuleFiredColumn=false&codeTarget=docker",
             "publishLevel": "decision",
-            "sourceUri": "/decisions/flows/69825e91-8b52-4f7e-9bff-b46f1a89e0ba/revisions/3de0a4dc-80ea-4e16-9114-3bf8a5adae13",
-            "principalID": "69825e91-8b52-4f7e-9bff-b46f1a89e0ba",
+            "sourceUri": "/decisions/flows/8b9a681f-c759-434a-a165-13355cb26440/revisions/9658cfad-cbca-4590-a869-5016ebc40cd4",
+            "principalID": "8b9a681f-c759-434a-a165-13355cb26440",
             "analyticStoreUri": []
         }]
 }
-
-
 
 print(payload)
 
