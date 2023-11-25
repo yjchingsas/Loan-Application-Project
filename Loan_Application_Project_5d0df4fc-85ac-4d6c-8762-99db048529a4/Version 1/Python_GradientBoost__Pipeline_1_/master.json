@@ -1,0 +1,335 @@
+{
+  "version" : 2,
+  "name" : "Python GradientBoost (Pipeline 1)",
+  "modeler" : "YiJian.Ching@sas.com",
+  "function" : "classification",
+  "algorithm" : "opensrc",
+  "tool" : "Model Studio",
+  "toolVersion" : "V2023.10",
+  "targetEvent" : "           1",
+  "sourceUri" : {
+    "name" : "Python GradientBoost",
+    "uri" : "/analyticsComponents/components/578d37ac-5b2c-427c-8fb0-e68859fb99c9",
+    "uriType" : "reference",
+    "mediaType" : "application/vnd.sas.analytics.component"
+  },
+  "candidateChampion" : false,
+  "nondeterministic" : false,
+  "datasourceUri" : {
+    "name" : "IDMMHMEQ_CUSTID",
+    "uri" : "/dataTables/dataSources/cas~fs~cas-shared-default~fs~Public/tables/IDMMHMEQ_CUSTID",
+    "uriType" : "reference"
+  },
+  "externalModelId" : "578d37ac-5b2c-427c-8fb0-e68859fb99c9",
+  "fitStatUri" : {
+    "name" : "dmcas_fitstat",
+    "uri" : "/files/files/36d06d83-cfe3-45ad-b83f-d0ddaa6611a3",
+    "uriType" : "child",
+    "mediaType" : "application/vnd.sas.analytics.report+json"
+  },
+  "sasOptions" : "options VALIDMEMNAME=EXTEND VALIDVARNAME=ANY;\n",
+  "partitionLevels" : [ {
+    "variableName" : "_PartInd_",
+    "dataRole" : "train",
+    "type" : "partition",
+    "value" : "           1"
+  }, {
+    "variableName" : "_PartInd_",
+    "dataRole" : "validate",
+    "type" : "partition",
+    "value" : "           0"
+  }, {
+    "variableName" : "_PartInd_",
+    "dataRole" : "test",
+    "type" : "partition",
+    "value" : "           2"
+  } ],
+  "eventLevels" : [ {
+    "variableName" : "I_Default",
+    "eventValue" : ""
+  }, {
+    "variableName" : "P_Default0",
+    "eventValue" : "           0"
+  }, {
+    "variableName" : "P_Default1",
+    "eventValue" : "           1"
+  } ],
+  "interactions" : [ ],
+  "modelTransformation" : {
+    "inputVariables" : [ {
+      "name" : "CredLineAge",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "CredLines",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "DebtIncRatio",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "Delinquencies",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "nominal",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "DerogatoryMarks",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "nominal",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "HomeValue",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "Income",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "Inquiries",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "nominal",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "JobType",
+      "role" : "input",
+      "type" : "string",
+      "level" : "nominal",
+      "length" : 7,
+      "transformationVariable" : false
+    }, {
+      "name" : "LoanRequest",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "LoanToValue",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "YearsOnJob",
+      "role" : "input",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    } ],
+    "outputVariables" : [ {
+      "name" : "P_Default0",
+      "role" : "prediction",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "P_Default1",
+      "role" : "prediction",
+      "type" : "numeric",
+      "level" : "interval",
+      "length" : 8,
+      "transformationVariable" : false
+    }, {
+      "name" : "I_Default",
+      "role" : "classification",
+      "type" : "numeric",
+      "level" : "nominal",
+      "length" : 8,
+      "transformationVariable" : false
+    } ],
+    "steps" : [ {
+      "sequence" : 1,
+      "type" : "pythonpkl",
+      "stepUri" : {
+        "name" : "_56LIKLGYGP1YOKC3M2XXT7Y6H_pkl",
+        "uri" : "/dataTables/dataSources/cas~fs~cas-shared-default~fs~Analytics_Project_0fec4b71-ca75-40c2-abf8-26e19dad7e8e/tables/_56LIKLGYGP1YOKC3M2XXT7Y6H_PKL?state=loaded",
+        "uriType" : "copy",
+        "contentType" : "pickle"
+      },
+      "inputVariables" : [ ],
+      "outputVariables" : [ ]
+    } ]
+  },
+  "transformations" : [ ],
+  "trainInputs" : [ {
+    "name" : "Default",
+    "role" : "target",
+    "type" : "numeric",
+    "level" : "binary",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "HomeValue",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "YearsOnJob",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "Delinquencies",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "nominal",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "Inquiries",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "nominal",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "DebtIncRatio",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "LoanToValue",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "LoanRequest",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "JobType",
+    "role" : "input",
+    "type" : "string",
+    "level" : "nominal",
+    "label" : "",
+    "length" : 7,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "DerogatoryMarks",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "nominal",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "CredLineAge",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "CredLines",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "Income",
+    "role" : "input",
+    "type" : "numeric",
+    "level" : "interval",
+    "label" : "",
+    "length" : 8,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "CustomerID",
+    "role" : "id",
+    "type" : "string",
+    "level" : "nominal",
+    "label" : "",
+    "length" : 6,
+    "format" : "",
+    "transformationVariable" : false
+  }, {
+    "name" : "_PartInd_",
+    "role" : "partition",
+    "type" : "numeric",
+    "level" : "nominal",
+    "label" : "_PartInd_",
+    "length" : 8,
+    "transformationVariable" : false
+  }, {
+    "name" : "_dmIndex_",
+    "role" : "key",
+    "type" : "numeric",
+    "level" : "interval",
+    "length" : 8,
+    "transformationVariable" : true
+  } ],
+  "modelNodeProperties" : [ ],
+  "rocDataUri" : {
+    "name" : "dmcas_roc",
+    "uri" : "/files/files/108c4da8-6e2b-41e6-8839-aa62beaebb94",
+    "uriType" : "child",
+    "mediaType" : "application/vnd.sas.analytics.report+json"
+  },
+  "liftDataUri" : {
+    "name" : "dmcas_lift",
+    "uri" : "/files/files/3ac8262b-ad06-49d7-9446-a944e52ad24f",
+    "uriType" : "child",
+    "mediaType" : "application/vnd.sas.analytics.report+json"
+  }
+}
