@@ -4,10 +4,6 @@
       "role": "scoreResource"
    },
    {
-      "name": "DS2EP_PythonWrapper.sas",
-      "role": "scoreResource"
-   },
-   {
       "name": "DS2Pkg_PythonWrapper.sas",
       "role": "scoreResource"
    },
@@ -17,6 +13,10 @@
    },
    {
       "name": "example_test.py",
+      "role": "scoreResource"
+   },
+   {
+      "name": "DS2EP_PythonWrapper.sas",
       "role": "scoreResource"
    },
    {
