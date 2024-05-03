@@ -41,24 +41,22 @@ access_token = response.json()['access_token']
 ## publishing time
 print("Now publishing model SCR with following details:")
 payload = {
-    "notes": "Published by models",
-    "destinationName": "AzureCR",
+    "name":"Published model scikit-learn_RandomForest",
+    "notes":"Publish models",
     "modelContents": [
-        {
-            "overwrite": True,
-            "modelName": "loanapp_model",
-            "publishLevel": "model",
-            "sourceUri": "/modelRepository/models/bb6ea2d6-c061-416a-a872-0de47f74c66d",
-        }]
+        {"modelName":"loanapp_model",
+        "sourceUri":"/modelRepository/models/bb6ea2d6-c061-416a-a872-0de47f74c66d","publishLevel":"model"
+        }],
+        "destinationName":"AzureCR"
 }
 
 print(payload)
 
 ##publish module 
 post_module_publish = requests.post(
-    url=f'{protocol}://{server}/modelPublish/models',
+    url=f'{protocol}://{server}/modelManagement/publish',
     headers={'Authorization': f'Bearer {access_token}',
-            'Content-Type': 'application/vnd.sas.models.publishing.request+json'},
+            'Content-Type': 'application/vnd.sas.models.publishing.publish+json'},
     params=dict(force='True', reloadModelTable='True'),
     data=json.dumps(payload),
     verify=False
