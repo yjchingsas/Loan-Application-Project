@@ -1,0 +1,94 @@
+{
+  "creationTimeStamp": "2024-05-03T09:01:12.545727Z",
+  "createdBy": "YiJian.Ching@sas.com",
+  "modifiedTimeStamp": "2024-05-03T09:01:12.545728Z",
+  "modifiedBy": "YiJian.Ching@sas.com",
+  "id": "53605a9d-46ef-485e-9bda-edd301e6a822",
+  "destinationName": "GitHub LoanApp Repo",
+  "destination": {
+    "creationTimeStamp": "2023-08-30T01:41:49.34919Z",
+    "createdBy": "YiJian.Ching@sas.com",
+    "modifiedTimeStamp": "2023-08-30T01:41:49.349191Z",
+    "modifiedBy": "YiJian.Ching@sas.com",
+    "version": 2,
+    "id": "b38e76e8-c295-44e2-a0bf-732769a93d79",
+    "name": "GitHub LoanApp Repo",
+    "description": "GitHub LoanApp publishing destination",
+    "destinationType": "git",
+    "properties": [
+      {
+        "name": "remoteRepositoryURL",
+        "value": "https://github.com/yjchingsas/Loan-Application-Project.git"
+      },
+      {
+        "name": "localRepositoryLocation",
+        "value": "/mmprojectpublic"
+      },
+      {
+        "name": "userEmail",
+        "value": "YiJian.Ching@sas.com"
+      },
+      {
+        "name": "credDomainId",
+        "value": "GitHub Domain Flow"
+      }
+    ],
+    "links": [
+      {
+        "method": "GET",
+        "rel": "up",
+        "href": "/modelPublish/destinations",
+        "uri": "/modelPublish/destinations",
+        "type": "application/vnd.sas.collection"
+      },
+      {
+        "method": "GET",
+        "rel": "self",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "type": "application/vnd.sas.models.publishing.destination"
+      },
+      {
+        "method": "DELETE",
+        "rel": "delete",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo"
+      },
+      {
+        "method": "PUT",
+        "rel": "update",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo",
+        "type": "application/vnd.sas.models.publishing.destination"
+      },
+      {
+        "method": "GET",
+        "rel": "getGitFolders",
+        "href": "/modelPublish/destinations/GitHub LoanApp Repo/gitFolders",
+        "uri": "/modelPublish/destinations/GitHub LoanApp Repo/gitFolders",
+        "type": "application/vnd.sas.collection"
+      }
+    ]
+  },
+  "content": {
+    "creationTimeStamp": "0001-01-01T00:00:00Z",
+    "modifiedTimeStamp": "0001-01-01T00:00:00Z",
+    "modelName": "scikit-learn_RandomForest",
+    "sourceURI": "/modelRepository/models/bb6ea2d6-c061-416a-a872-0de47f74c66d",
+    "publishLevel": "model"
+  },
+  "properties": {
+    "gitFolderPath": "scikit-learn_RandomForest",
+    "gitRepositoryURL": "https://github.com/yjchingsas/Loan-Application-Project.git"
+  },
+  "sourceURI": "/modelRepository/models/bb6ea2d6-c061-416a-a872-0de47f74c66d",
+  "inputVariables": null,
+  "outputVariables": null,
+  "component": {},
+  "product": {},
+  "service": {
+    "name": "Model Publish service"
+  },
+  "baseImage": {},
+  "tags": "champion_model"
+}
