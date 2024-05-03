@@ -1,0 +1,32 @@
+[
+   {
+      "name": "P_DEFAULT0",
+      "description": "",
+      "role": "output",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "P_DEFAULT1",
+      "description": "",
+      "role": "output",
+      "type": "decimal",
+      "level": "interval",
+      "format": "",
+      "aggregation": "",
+      "length": 8
+   },
+   {
+      "name": "I_DEFAULT",
+      "description": "",
+      "role": "output",
+      "type": "string",
+      "level": "nominal",
+      "format": "",
+      "aggregation": "",
+      "length": 1
+   }
+]
