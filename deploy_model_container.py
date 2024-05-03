@@ -2,6 +2,7 @@
 API to publish SCR model
 '''
 
+import time
 import requests
 import json
 import os
@@ -9,8 +10,8 @@ from pathlib import Path
 os.environ['SSLREQCERT']='false'
 
 ## server params
-protocol=os.environ['PROTOCOL']
-server = os.environ['SERVER']
+# protocol=os.environ['PROTOCOL']
+# server = os.environ['SERVER']
 
 protocol = "https"
 server = "apgtps2demo.gtp.unx.sas.com"
@@ -56,10 +57,13 @@ print(payload)
 post_module_publish = requests.post(
     url=f'{protocol}://{server}/modelPublish/models',
     headers={'Authorization': f'Bearer {access_token}',
-            'Content-Type': 'application/vnd.sas.models.publishing.request+json'},
+            'Content-Type': 'application/vnd.sas.models.publishing.request.asynchronous+json'},
     params=dict(force='True', reloadModelTable='True'),
     data=json.dumps(payload),
     verify=False
     )
+
+time.sleep(120)
+
 print(post_module_publish.json())
 
