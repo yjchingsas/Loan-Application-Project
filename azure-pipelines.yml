@@ -44,28 +44,28 @@ stages:
 
 
 - stage: publishing
-  displayName: Create Decision SCR
+  displayName: Create Model SCR
   condition: succeeded('testing')
   jobs:
-  - job: publishDecisionSCR
-    displayName: Create Decision Flow SCR
+  - job: publishModelSCR
+    displayName: Create Model Flow SCR
     steps:
     - task: PythonScript@0
       #condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
       inputs:
         scriptSource: 'filepath'
-        scriptPath: $(System.DefaultWorkingDirectory)/deploy_decision_container.py
+        scriptPath: $(System.DefaultWorkingDirectory)/deploy_model_container.py
 
 - stage: deployment
-  displayName: Deploy Decision SCR as Pod
+  displayName: Deploy Model SCR as Pod
   condition: succeeded('publishing')
   jobs:
-  - job: deployDecisionSCR
-    displayName: Deploy Decision SCR as Pod
+  - job: deployModelSCR
+    displayName: Deploy Model SCR as Pod
     steps:
     - task: Kubernetes@1
       #condition: not(contains(variables['Build.SourceVersionMessage'], 'loanapp_project'))
-      displayName: kubectl re-deploy decision SCR deployment
+      displayName: kubectl re-deploy model SCR deployment
       inputs:
         connectionType: 'Kubernetes Service Connection'
         kubernetesServiceEndpoint: $(kubernetesServiceEndpoint)
@@ -73,4 +73,4 @@ stages:
         kubernetesCluster: $(kubernetesCluster)
         useClusterAdmin: $(useClusterAdmin)
         command: rollout
-        arguments: "restart deployment scr-decision-container"
+        arguments: "restart deployment scr-model-container"
