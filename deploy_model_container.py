@@ -19,7 +19,7 @@ server = "apgtps2demo.gtp.unx.sas.com"
 # model_name = os.environ['MODEL_NAME']
 
 ## Refresh token
-refresh_token = Path('demo/apgtps2demo_refresh_token.txt').read_text().replace('\n', '')
+refresh_token = Path('/home/ssayjc/apgtps2demo_refresh_token.txt').read_text().replace('\n', '')
 
 
 payload=f'grant_type=refresh_token&refresh_token={refresh_token}'
@@ -56,7 +56,7 @@ print(payload)
 post_module_publish = requests.post(
     url=f'{protocol}://{server}/modelPublish/models',
     headers={'Authorization': f'Bearer {access_token}',
-            'Content-Type': 'application/vnd.sas.models.publishing.request+json'},
+            'Content-Type': 'application/vnd.sas.models.publishing.request.asynchronous+json'},
     params=dict(force='True', reloadModelTable='True'),
     data=json.dumps(payload),
     verify=False
