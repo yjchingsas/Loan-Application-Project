@@ -1,0 +1,62 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: scr-model-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: scr-model-container
+  template:
+    metadata:
+      labels:
+        app: scr-model-container
+    spec:
+      hostname: scrmodelapp
+      containers:
+      - name: scr-model-container
+        image: ssayjcrepo.azurecr.io/loanapp_model:latest
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+          limits:
+            cpu: 1000m
+            memory: 4Gi
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: scr-model-container
+spec:
+  type: LoadBalancer
+  selector:
+    app: scr-model-container
+  ports:
+  - port: 8080
+    targetPort: 8080
+  loadBalancerSourceRanges:
+  - 192.31.37.0/24
+  - 203.125.221.0/24
+  - 1.156.0.0/16
+
+#TODO: fix the cluster ip to run this
+
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: scr-model-container
+#   namespace: scr-model-container
+# spec:
+#   type: LoadBalancer
+#   ports:
+#   - port: 80
+#     targetPort: 8001
+#     protocol: TCP
+#   selector:
+#     app: scr-model-container
+#   loadBalancerSourceRanges:
+#   - 192.31.37.0/24
+#   - 203.125.221.0/24
