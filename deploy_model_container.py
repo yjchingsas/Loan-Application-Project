@@ -12,11 +12,15 @@ os.environ['SSLREQCERT']='false'
 protocol=os.environ['PROTOCOL']
 server = os.environ['SERVER']
 
+protocol = "https"
+server = "apgtps2demo.gtp.unx.sas.com"
+
 # dest_name = os.environ['DESTINATION_NAME']
 # model_name = os.environ['MODEL_NAME']
 
 ## Refresh token
-refresh_token = Path('demo/apgtps2demo_refresh_token.txt').read_text().replace('\n', '')
+refresh_token = Path('/home/ssayjc/apgtps2demo_refresh_token.txt').read_text().replace('\n', '')
+
 
 payload=f'grant_type=refresh_token&refresh_token={refresh_token}'
 headers = {
@@ -31,6 +35,7 @@ response = requests.post(
     data=payload,
     verify=False
 )
+
 access_token = response.json()['access_token']
 
 ## publishing time
@@ -51,7 +56,7 @@ print(payload)
 
 ##publish module 
 post_module_publish = requests.post(
-    url=f'{protocol}://{server}/modelManagement/models',
+    url=f'{protocol}://{server}/modelPublish/models',
     headers={'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/vnd.sas.models.publishing.request+json'},
     params=dict(force='True', reloadModelTable='True'),
