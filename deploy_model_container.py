@@ -54,9 +54,9 @@ print(payload)
 
 ##publish module 
 post_module_publish = requests.post(
-    url=f'{protocol}://{server}/modelManagement/publish',
+    url=f'{protocol}://{server}/modelPublish/models',
     headers={'Authorization': f'Bearer {access_token}',
-            'Content-Type': 'application/vnd.sas.models.publishing.request.asynchronous+json'},
+            'Content-Type': 'application/vnd.sas.models.publishing.request+json'},
     params=dict(force='True', reloadModelTable='True'),
     data=json.dumps(payload),
     verify=False
