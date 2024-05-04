@@ -10,11 +10,11 @@ from pathlib import Path
 os.environ['SSLREQCERT']='false'
 
 ## server params
-# protocol=os.environ['PROTOCOL']
-# server = os.environ['SERVER']
+protocol=os.environ['PROTOCOL']
+server = os.environ['SERVER']
 
-protocol = "https"
-server = "apgtps2demo.gtp.unx.sas.com"
+# protocol = "https"
+# server = "apgtps2demo.gtp.unx.sas.com"
 
 # dest_name = os.environ['DESTINATION_NAME']
 # model_name = os.environ['MODEL_NAME']
@@ -42,6 +42,7 @@ access_token = response.json()['access_token']
 ## publishing time
 print("Now publishing model SCR with following details:")
 payload = {
+
     "name":"Published model scikit-learn_RandomForest",
     "notes":"Publish models",
     "modelContents": [
