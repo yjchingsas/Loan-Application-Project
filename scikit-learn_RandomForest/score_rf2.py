@@ -1,9 +1,10 @@
 import pickle
 import numpy as np
 import pandas as pd
+import settings
 
 # Load pickle file objects
-with open('Loan_Application_Project_MM_e64e0df0-7986-4dff-93d1-4da08b6b931d/Version 1/scikit-learn_RandomForest/rf_V3_11_5.pkl', 'rb') as f:
+with open(settings.pickle_path + '/rf_V3_11_5.pkl', 'rb') as f:
     imputer = pickle.load(f)
     ohe = pickle.load(f)
     model = pickle.load(f)
@@ -32,12 +33,3 @@ def score_method(DELINQUENCIES, DEROGATORYMARKS, INQUIRIES, CREDLINEAGE, CREDLIN
     rec_pred = model.predict(rec)
 
     return float(rec_pred_prob[0][0]), float(rec_pred_prob[0][1]), str(float(rec_pred[0]))
-
-def test_function_is_tuple():
-    assert type(score_method(14.20,155.73,111.31,20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)) is tuple
-
-def test_output_scores():
-    assert score_method(14.20,155.73,111.31,20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)[0] + score_method(14.20,155.73,111.31,20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)[1] == 1.0
-
-def test_output_result():
-    assert type(score_method(14.20,155.73,111.31,20.73,186.01,181.01,26.61,78.94,29.21,5.14,100.91)[2]) is str

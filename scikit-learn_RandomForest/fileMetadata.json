@@ -1,0 +1,38 @@
+[
+   {
+      "name": "inputVar.json",
+      "role": "inputVariables"
+   },
+   {
+      "name": "outputVar.json",
+      "role": "outputVariables"
+   },
+   {
+      "name": "rf_V3_11_5.pkl",
+      "role": "python pickle"
+   },
+   {
+      "name": "requirements.json",
+      "role": "scoreResource"
+   },
+   {
+      "name": "score_rf2.py",
+      "role": "score"
+   },
+   {
+      "name": "DS2EP_PythonWrapper.sas",
+      "role": "scoreResource"
+   },
+   {
+      "name": "example_test.py",
+      "role": "scoreResource"
+   },
+   {
+      "name": "ContainerWrapper.py",
+      "role": "scoreResource"
+   },
+   {
+      "name": "settings.py",
+      "role": "scoreResource"
+   }
+]
