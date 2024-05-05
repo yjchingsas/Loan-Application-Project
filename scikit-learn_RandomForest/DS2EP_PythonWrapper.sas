@@ -39,7 +39,7 @@ data sasep.out;
       resultCode = revision = 0;
       if null(pm) then do;
          pm = _new_ pymas();
-         resultCode = pm.useModule('model_exec_1389f4c4-27ec-4235-80c3-fac1e307d5a5', 1);
+         resultCode = pm.useModule('model_exec_3588f21f-d960-4eab-be21-62596053f082', 1);
          if resultCode then do;
             resultCode = pm.appendSrcLine('import sys');
             resultCode = pm.appendSrcLine('sys.path.append("/models/resources/viya/bb6ea2d6-c061-416a-a872-0de47f74c66d/")');
@@ -50,7 +50,7 @@ data sasep.out;
             resultCode = pm.appendSrcLine('    "Output: P_DEFAULT0, P_DEFAULT1, I_DEFAULT"');
             resultCode = pm.appendSrcLine('    return score_rf2.score_method(DELINQUENCIES, DEROGATORYMARKS, INQUIRIES, CREDLINEAGE, CREDLINES, DEBTINCRATIO, LOANREQUEST, HOMEVALUE, INCOME, LOANTOVALUE, YEARSONJOB)');
 
-            revision = pm.publish(pm.getSource(), 'model_exec_1389f4c4-27ec-4235-80c3-fac1e307d5a5');
+            revision = pm.publish(pm.getSource(), 'model_exec_3588f21f-d960-4eab-be21-62596053f082');
             if ( revision < 1 ) then do;
                logr.log( 'e', 'py.publish() failed.');
                resultCode = -1;
