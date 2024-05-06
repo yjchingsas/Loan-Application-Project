@@ -1,7 +1,7 @@
 {
    "creationTimeStamp": "2024-05-02T13:09:07.376Z",
    "createdBy": "YiJian.Ching@sas.com",
-   "modifiedTimeStamp": "2024-05-05T04:29:22.612Z",
+   "modifiedTimeStamp": "2024-05-06T00:25:21.116Z",
    "modifiedBy": "YiJian.Ching@sas.com",
    "id": "bb6ea2d6-c061-416a-a872-0de47f74c66d",
    "name": "scikit-learn_RandomForest",
@@ -19,7 +19,7 @@
    "targetLevel": "binary",
    "tool": "Python 3",
    "toolVersion": "3.11.5",
-   "publishTimeStamp": 1714810170525,
-   "modelVersionName": "10.2",
+   "publishTimeStamp": 1714883605711,
+   "modelVersionName": "11.1",
    "custom properties": []
 }

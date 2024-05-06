@@ -24,11 +24,11 @@
       "role": "scoreResource"
    },
    {
-      "name": "DS2EP_PythonWrapper.sas",
+      "name": "settings.py",
       "role": "scoreResource"
    },
    {
-      "name": "settings.py",
+      "name": "DS2EP_PythonWrapper.sas",
       "role": "scoreResource"
    },
    {
